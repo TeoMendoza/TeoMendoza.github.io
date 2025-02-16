@@ -2,44 +2,43 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     color: #333;
 }
 
 body {
-    background: #f4f4f4;
+    background: #f8f9fa;
     text-align: center;
 }
 
 header {
-    background: #ddd;
+    background: #e3e7ec;
     padding: 15px;
+    border-bottom: 2px solid #d1d5db;
 }
 
 header h1 a {
     text-decoration: none;
-    color: #222;
+    color: #333;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 15px;
-}
-
-nav ul li {
-    display: inline;
+    gap: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #444;
+    font-weight: bold;
 }
 
 .hero {
     padding: 80px 20px;
     background: #fff;
+    border-bottom: 2px solid #d1d5db;
 }
 
 .projects {
@@ -54,7 +53,7 @@ nav ul li a {
 }
 
 .project-category {
-    background: #222;
+    background: #007bff;
     color: white;
     padding: 15px 20px;
     text-decoration: none;
@@ -63,27 +62,33 @@ nav ul li a {
 
 .project-card {
     background: white;
-    padding: 20px;
-    margin: 15px auto;
+    padding: 25px;
+    margin: 20px auto;
     max-width: 700px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-card a {
     text-decoration: none;
     font-weight: bold;
-    color: #222;
+    color: #007bff;
 }
 
 .contact {
     padding: 50px;
-    background: #eee;
+    background: #e3e7ec;
+    border-top: 2px solid #d1d5db;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background: #ddd;
+    padding: 15px;
+    background: #e3e7ec;
     font-size: 14px;
 }
