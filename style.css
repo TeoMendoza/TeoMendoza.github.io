@@ -26,7 +26,7 @@ header {
 }
 
 header h1 a {
-    color: #2a5db0;
+    color: #b5b6b6;
     text-decoration: none;
     font-size: 1.8rem;
 }
@@ -46,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #2a5db0;
+    color: #b5b6b6;
 }
 
 /* Main Content Styles */
@@ -67,7 +67,7 @@ main {
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #2a5db0;
+    color: #b5b6b6;
 }
 
 /* Projects Section */
@@ -89,7 +89,7 @@ main {
     text-align: center;
     text-decoration: none;
     color: #333;
-    border: 2px solid #2a5db0;
+    border: 2px solid #b5b6b6;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -105,17 +105,17 @@ main {
     border-radius: 10px;
     margin: 2rem 0;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid #2a5db0;
+    border-left: 4px solid #b5b6b6;
 }
 
 .project-card h3 {
-    color: #2a5db0;
+    color: #b5b6b6;
     margin-bottom: 1rem;
 }
 
 .project-card a {
     display: inline-block;
-    background: #2a5db0;
+    background: #b5b6b6;
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
@@ -125,7 +125,7 @@ main {
 }
 
 .project-card a:hover {
-    background: #1d427a;
+    background: #b5b6b6;
 }
 
 /* Contact Section */
@@ -143,22 +143,22 @@ main {
 }
 
 .contact a {
-    color: #2a5db0;
+    color: #b5b6b6;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border: 2px solid #2a5db0;
+    border: 2px solid #b5b6b6;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 .contact a:hover {
-    background: #2a5db0;
+    background: #b5b6b6;
     color: white;
 }
 
 /* Footer */
 footer {
-    background: #2a5db0;
+    background: #b5b6b6;
     color: white;
     text-align: center;
     padding: 1rem;
