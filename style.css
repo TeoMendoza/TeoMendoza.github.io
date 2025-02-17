@@ -79,9 +79,10 @@ nav a:hover {
     line-height: 1.8;
 }
 
+/* Fix About Me Section */
 .hero .about-me {
-    margin-top: 2rem;  /* Reduced from 3rem */
-    padding: 1.5rem;   /* Slightly reduced padding */
+    margin-top: 1.5rem; /* Reduced from 3rem */
+    padding: 1.5rem;
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -166,10 +167,10 @@ nav a:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Section Update */
+/* Fix Contact Section Position */
 .contact {
-    padding: 3rem 1.5rem; /* Reduced padding from 4rem to 3rem */
-    margin: 3rem auto; /* Reduced margin from 4rem to 3rem */
+    padding: 3rem 1.5rem; /* Reduced from 4rem */
+    margin: 2rem auto; /* Reduced from 4rem */
     max-width: 800px;
     width: 100%;
     background: #ffffff;
@@ -216,6 +217,21 @@ footer {
     padding: 2rem;
     margin-top: auto;
 }
+
+section {
+    padding: 3rem 1.5rem; /* Reduced from 4rem */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Remove Extra Bottom Margin Between Sections */
+.hero, .projects, .contact {
+    margin-bottom: 2rem; /* Previously might have been too large */
+}
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
