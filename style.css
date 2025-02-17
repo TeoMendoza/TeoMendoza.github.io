@@ -80,8 +80,8 @@ nav a:hover {
 }
 
 .hero .about-me {
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2rem;  /* Reduced from 3rem */
+    padding: 1.5rem;   /* Slightly reduced padding */
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -127,6 +127,8 @@ nav a:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border-left: 4px solid #2d2d2d;
     transition: transform 0.3s ease;
+    padding-left: 2rem; /* Added left padding */
+    padding-right: 2rem; /* Added right padding */
 }
 
 .project-card:hover {
@@ -166,14 +168,13 @@ nav a:hover {
 
 /* Contact Section Update */
 .contact {
-    padding: 4rem 1.5rem;
-    margin: 4rem auto;
+    padding: 3rem 1.5rem; /* Reduced padding from 4rem to 3rem */
+    margin: 3rem auto; /* Reduced margin from 4rem to 3rem */
     max-width: 800px;
     width: 100%;
     background: #ffffff;
     border-radius: 16px;
 }
-
 .contact h2 {
     color: #2d2d2d;
     margin-bottom: 2rem;
