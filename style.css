@@ -166,6 +166,10 @@ nav a:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.project-card p + p {
+  margin-top: 1rem;
+}
+
 /* Contact Section Update */
 .contact {
     padding: 3rem 1.5rem; /* Reduced padding from 4rem to 3rem */
@@ -237,10 +241,6 @@ footer {
         width: 100%;
         justify-content: center;
     }
-}
-
-.project-card p:not(:last-child) {
-  margin-bottom: 1rem;
 }
 
 /* Font Awesome Icons */
