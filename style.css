@@ -256,7 +256,7 @@ footer {
 .project-tile {
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d;
+  border-left: 4px solid #2d2d2d; /* accent bar */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   padding: 2rem;
@@ -269,6 +269,7 @@ footer {
 .project-tile:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  border-left-color: #2d2d2d; /* keep the same color */
 }
 
 .project-tile h3 {
@@ -314,6 +315,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
