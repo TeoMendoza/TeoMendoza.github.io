@@ -89,6 +89,12 @@ nav a:hover {
 /* Projects Section */
 .projects {
     padding: 4rem 1.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;   /* space between cards */
+    max-width: 1200px;   /* keeps it from stretching super wide on big screens */
+    margin: 0 auto;      /* center the grid */
 }
 
 .project-links {
