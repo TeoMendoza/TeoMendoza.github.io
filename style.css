@@ -247,7 +247,7 @@ footer {
 .projects-grid {
   padding: 4rem 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* wider tiles */
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* wider tiles */
   gap: 2rem;
   max-width: 1400px;   /* allow more breathing room */
   margin: 0 auto;
