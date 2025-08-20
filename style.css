@@ -89,12 +89,6 @@ nav a:hover {
 /* Projects Section */
 .projects {
     padding: 4rem 1.5rem;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;   /* space between cards */
-    max-width: 1200px;   /* keeps it from stretching super wide on big screens */
-    margin: 0 auto;      /* center the grid */
 }
 
 .project-links {
@@ -248,6 +242,78 @@ footer {
         justify-content: center;
     }
 }
+
+/* ==== Projects Index Grid (separate from .projects/.project-card) ==== */
+.projects-grid {
+  padding: 4rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-tile {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #2d2d2d;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  border-color: #2d2d2d;
+}
+
+.project-tile h3 {
+  color: #2d2d2d;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.project-tile p {
+  color: #6a6a6a;
+  line-height: 1.7;
+}
+
+.project-tile p + p {
+  margin-top: 0.75rem;
+}
+
+/* Button link inside tile pinned to bottom for equal visual height */
+.project-tile a {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2d2d2d;
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  font-weight: 500;
+}
+
+.project-tile a:hover {
+  background: #1a1a1a;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive tweak: allow narrower tiles on smaller screens */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Font Awesome Icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
