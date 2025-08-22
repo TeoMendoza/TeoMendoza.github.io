@@ -82,7 +82,7 @@ nav a.active {
 
 .hero {
     text-align: center;
-    padding: 4.5rem 2rem 2.25rem;
+    padding: 4.5rem 2rem 1.25rem;
     position: relative;
     margin: 0 auto;
     max-width: 800px;
@@ -192,7 +192,7 @@ nav a.active {
 /* Project Cards */
 .project-card {
     background: #ffffff;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 12px;
     margin: 1.5rem auto;
     max-width: 800px;
