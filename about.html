@@ -1,73 +1,114 @@
-<main class="about-page">
-  <!-- Header / Photo -->
-  <section class="about-hero">
-    <img class="about-photo" src="/assets/teo.jpg" alt="Photo of Me" />
-    <div>
-      <h1>About Me</h1>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me | Teo Mendoza</title>
+  <link rel="stylesheet" href="../style.css?v=2" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Teo Mendoza</a></h1>
+    <nav>
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Who I Am -->
-  <section class="about-section">
-    <h2>Who I Am</h2>
-    <p>
-      I'm Teo—currently studying computer science at Willamette University and making games because
-      I love the mix of systems, story, and human feeling. I grew up in
-      <span class="placeholder">[your hometown or region]</span>, in a home where weekends meant
-      family, food, and a slightly chaotic schedule of hobbies. I’m the kind of person who
-      overthinks puzzle rules, texts friends about oddly satisfying UI, and gets way too excited
-      when a small detail makes something feel real.
-    </p>
-    <p>
-      Outside the screen, I’m happiest moving—long walks, runs, and gym sessions—then cooking
-      something simple (and usually healthier than it looks). I like good conversations, small creative
-      projects, and the feeling of chipping away at a difficult thing until it clicks.
-    </p>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <img class="avatar" src="../assets/teo.jpg" alt="Photo of Teo" />
+      <h2>About Me</h2>
+      <p>Human first, designer second. Here’s a bit of the person behind the projects.</p>
+    </section>
 
-  <!-- Interests -->
-  <section class="about-section">
-    <h2>Things I’m Into</h2>
-    <ul class="interests">
-      <li>
-        <h3>Running & Lifting</h3>
-        <p>Slow, steady progress. I like tracking, tinkering, and feeling stronger over time.</p>
-      </li>
-      <li>
-        <h3>Cooking Experiments</h3>
-        <p>Low-key “nutrition nerd.” High-protein desserts, air-fryer science, and better-than-it-should-be breakfasts.</p>
-      </li>
-      <li>
-        <h3>Games as Tiny Worlds</h3>
-        <p>I love how rules, art, and sound create meaning—especially when small choices change the vibe.</p>
-      </li>
-      <li>
-        <h3>Walks & Good Music</h3>
-        <p>Head-clearing playlists and long loops around the neighborhood.</p>
-      </li>
-      <li>
-        <h3>Travel Moments</h3>
-        <p>New places, cheap coffee, and taking photos that make me want to build new spaces in 3D.</p>
-      </li>
-    </ul>
-  </section>
+    <!-- Who I Am -->
+    <section class="project-card">
+      <h3>Who I Am</h3>
+      <p>
+        I’m Teo — a curious, pretty energetic person who loves building things and then
+        refining them until they feel right. I grew up in
+        <span class="placeholder">[your hometown/region]</span>, where weekends were a mix of
+        family time, long walks, and small creative detours. I like thoughtful conversations,
+        making tiny improvements, and the feeling of chipping away at a hard problem until it clicks.
+      </p>
+      <p>
+        When I’m not at my desk, I’m usually moving — running, lifting, or exploring a new route —
+        and then cooking something simple (often healthier than it looks). I’m big on music during
+        long walks, small routines, and noticing the little details that make spaces feel alive.
+      </p>
+    </section>
 
-  <!-- Mini Gallery -->
-  <section class="about-section">
-    <h2>Snapshots</h2>
-    <div class="gallery">
-      <figure>
-        <img src="/assets/gallery/run.jpg" alt="Trail path during an early morning run">
-        <figcaption>Early run = best ideas.</figcaption>
-      </figure>
-      <figure>
-        <img src="/assets/gallery/cook.jpg" alt="Homemade high-protein dessert on a plate">
-        <figcaption>Experimenting in the kitchen.</figcaption>
-      </figure>
-      <figure>
-        <img src="/assets/gallery/travel.jpg" alt="Street scene from a recent trip">
-        <figcaption>Collecting textures & colors.</figcaption>
-      </figure>
-    </div>
-  </section>
-</main>
+    <!-- Interests -->
+    <section class="project-card">
+      <h3>Things I’m Into</h3>
+      <div class="tiles-grid">
+        <div class="project-tile">
+          <h3>Running & Lifting</h3>
+          <p>Slow, steady progress. I like tracking, tinkering, and feeling stronger over time.</p>
+        </div>
+        <div class="project-tile">
+          <h3>Cooking Experiments</h3>
+          <p>High-protein desserts, air-fryer science, and better-than-it-should-be breakfasts.</p>
+        </div>
+        <div class="project-tile">
+          <h3>Games as Tiny Worlds</h3>
+          <p>Rules + art + sound shaping meaning, especially when small choices change the vibe.</p>
+        </div>
+        <div class="project-tile">
+          <h3>Walks & Music</h3>
+          <p>Head-clearing playlists and long loops around the neighborhood.</p>
+        </div>
+        <div class="project-tile">
+          <h3>Travel Moments</h3>
+          <p>New places, cheap coffee, and photos that inspire new 3D spaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Snapshots -->
+    <section class="project-card">
+      <h3>Snapshots</h3>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/gallery/run.jpg" alt="Trail path during an early morning run" />
+          <figcaption>Early run = best ideas.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/gallery/cook.jpg" alt="Homemade high-protein dessert on a plate" />
+          <figcaption>Experimenting in the kitchen.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/gallery/travel.jpg" alt="Street scene from a recent trip" />
+          <figcaption>Collecting textures & colors.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Contact (same pattern as other pages) -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="https://github.com/teomendoza" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a></li>
+        <li><a href="https://linkedin.com/in/teo-m-285785337" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a></li>
+        <li><a href="mailto:teom4834@gmail.com">
+          <i class="fas fa-envelope"></i> Email
+        </a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Teo Mendoza</p>
+  </footer>
+</body>
+</html>
