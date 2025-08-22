@@ -194,14 +194,15 @@ nav a.active {
     background: #ffffff;
     padding: 2.5rem;
     border-radius: 12px;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     max-width: 800px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border-left: 4px solid #2d2d2d;
     transition: transform 0.3s ease;
-    padding-left: 2rem; /* Added left padding */
-    padding-right: 2rem; /* Added right padding */
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
+
 
 .project-card:hover {
     transform: translateY(-3px);
@@ -364,13 +365,15 @@ nav a.active {
 /* ========================================================================== */
 
 .contact {
-    padding: 3rem 1.5rem; /* Reduced padding from 4rem to 3rem */
-    margin: 3rem auto; /* Reduced margin from 4rem to 3rem */
+    padding: 3rem 1.5rem;
+    margin: 2rem auto;
     max-width: 800px;
     width: 100%;
     background: #ffffff;
     border-radius: 16px;
 }
+
+
 .contact h2 {
     color: #2d2d2d;
     margin-bottom: 2rem;
