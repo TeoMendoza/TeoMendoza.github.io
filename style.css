@@ -82,11 +82,12 @@ nav a.active {
 
 .hero {
     text-align: center;
-    padding: 6rem 2rem 8rem;
+    padding: 4.5rem 2rem 2.25rem;
     position: relative;
     margin: 0 auto;
     max-width: 800px;
 }
+
 
 .hero h2 {
     font-size: 3.5rem;
