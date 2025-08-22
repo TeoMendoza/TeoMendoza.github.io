@@ -1,4 +1,15 @@
-/* Reset and Base Styles */
+/* ========================================================================== */
+/* 0) Imports                                                                 */
+/* ========================================================================== */
+
+/* Font Awesome Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+
+/* ========================================================================== */
+/* 1) Reset & Base Styles                                                     */
+/* ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +26,11 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styles */
+
+/* ========================================================================== */
+/* 2) Header & Navigation                                                     */
+/* ========================================================================== */
+
 header {
     background-color: #ffffff;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
@@ -54,7 +69,17 @@ nav a:hover {
     border-bottom-color: #2d2d2d;
 }
 
-/* Hero Section Update */
+/* Active nav link */
+nav a.active {
+    color: #2d2d2d;
+    border-bottom-color: #2d2d2d;
+}
+
+
+/* ========================================================================== */
+/* 3) Hero Section                                                            */
+/* ========================================================================== */
+
 .hero {
     text-align: center;
     padding: 6rem 2rem 8rem;
@@ -85,6 +110,52 @@ nav a:hover {
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
+
+/* About page avatar */
+.hero .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+/* Buttons row under hero text */
+.hero .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+
+/* ========================================================================== */
+/* 4) Buttons (Base styles shared across components)                          */
+/* ========================================================================== */
+
+/* Base button look (matches project-card buttons) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2d2d2d;            /* or var(--accent) if you added themes */
+    color: #fff;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.btn:hover { background: #1a1a1a; }
+.btn:visited { color: #fff; }
+
+
+/* ========================================================================== */
+/* 5) Sections: Projects / Cards                                              */
+/* ========================================================================== */
 
 /* Projects Section */
 .projects {
@@ -170,80 +241,11 @@ nav a:hover {
   margin-top: 1rem;
 }
 
-/* Contact Section Update */
-.contact {
-    padding: 3rem 1.5rem; /* Reduced padding from 4rem to 3rem */
-    margin: 3rem auto; /* Reduced margin from 4rem to 3rem */
-    max-width: 800px;
-    width: 100%;
-    background: #ffffff;
-    border-radius: 16px;
-}
-.contact h2 {
-    color: #2d2d2d;
-    margin-bottom: 2rem;
-}
 
-.contact ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
+/* ========================================================================== */
+/* 6) Projects Index Grid & Tiles                                             */
+/* ========================================================================== */
 
-.contact a {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    color: #6a6a6a;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    background: #f8f9fa;
-}
-
-.contact a:hover {
-    border-color: #2d2d2d;
-    color: #2d2d2d;
-    background: #f8f9fa;
-}
-
-/* Footer */
-footer {
-    background: #2d2d2d;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    padding: 2rem;
-    margin-top: auto;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-links {
-        grid-template-columns: 1fr;
-    }
-
-    nav ul {
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .hero h2 {
-        font-size: 2.2rem;
-    }
-
-    .contact a {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* Projects Index Grid */
 .projects-grid {
   padding: 4rem 1.5rem;
   display: grid;
@@ -309,35 +311,10 @@ footer {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive tweak: collapse to single column on narrow screens */
-@media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
-
-
-
-/* Font Awesome Icons */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
-/* Active nav link */
-nav a.active {
-  color: #2d2d2d;
-  border-bottom-color: #2d2d2d;
-}
-
-/* About page avatar */
-.hero .avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #e0e0e0;
-  display: block;
-  margin: 0 auto 1rem;
-}
+/* ========================================================================== */
+/* 7) About Page Helpers (optional blocks used on About)                      */
+/* ========================================================================== */
 
 /* Smaller tile grid for interests (reuses .project-tile styling) */
 .tiles-grid {
@@ -380,11 +357,69 @@ nav a.active {
   font-style: italic;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .hero .avatar { width: 112px; height: 112px; }
+
+/* ========================================================================== */
+/* 8) Contact                                                                 */
+/* ========================================================================== */
+
+.contact {
+    padding: 3rem 1.5rem; /* Reduced padding from 4rem to 3rem */
+    margin: 3rem auto; /* Reduced margin from 4rem to 3rem */
+    max-width: 800px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+}
+.contact h2 {
+    color: #2d2d2d;
+    margin-bottom: 2rem;
 }
 
+.contact ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #6a6a6a;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.contact a:hover {
+    border-color: #2d2d2d;
+    color: #2d2d2d;
+    background: #f8f9fa;
+}
+
+
+/* ========================================================================== */
+/* 9) Footer                                                                  */
+/* ========================================================================== */
+
+footer {
+    background: #2d2d2d;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+
+/* ========================================================================== */
+/* 10) Interactive Effects: Hover Jump & Focus                                */
+/* ========================================================================== */
 
 /* Button hover jump to match cards/tiles */
 .project-card a,
@@ -418,7 +453,49 @@ nav a.active {
   transform: translateY(-3px);
 }
 
-/* Respect reduced motion preferences */
+
+/* ========================================================================== */
+/* 11) Responsive                                                             */
+/* ========================================================================== */
+
+/* Global responsive */
+@media (max-width: 768px) {
+    .project-links {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* About avatar tweak */
+@media (max-width: 768px) {
+  .hero .avatar { width: 112px; height: 112px; }
+}
+
+/* Projects index grid tweak */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ========================================================================== */
+/* 12) Reduced Motion                                                         */
+/* ========================================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   .project-card a,
   .project-tile a,
@@ -426,5 +503,3 @@ nav a.active {
     transition: none;
   }
 }
-
-
