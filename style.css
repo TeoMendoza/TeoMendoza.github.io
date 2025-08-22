@@ -386,35 +386,45 @@ nav a.active {
 }
 
 
-/* Reuse the same button look everywhere */
+/* Button hover jump to match cards/tiles */
 .project-card a,
 .project-tile a,
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #2d2d2d;
-  color: #fff;
-  padding: 0.8rem 1.4rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
-  font-weight: 500;
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card a:hover,
 .project-tile a:hover,
 .btn:hover {
-  background: #1a1a1a;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
-/* Layout for buttons under the hero blurb */
-.hero .hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
+.project-card a:active,
+.project-tile a:active,
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.08);
 }
+
+/* (Optional) Better keyboard focus */
+.btn:focus-visible,
+.project-card a:focus-visible,
+.project-tile a:focus-visible {
+  outline: 2px solid #2d2d2d;
+  outline-offset: 2px;
+  transform: translateY(-3px);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .project-card a,
+  .project-tile a,
+  .btn {
+    transition: none;
+  }
+}
+
 
