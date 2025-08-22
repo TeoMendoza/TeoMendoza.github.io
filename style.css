@@ -75,6 +75,14 @@ nav a.active {
     border-bottom-color: #2d2d2d;
 }
 
+/* Mid heading: bigger than h3, smaller than h2 */
+.h3-large {
+  font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: #2d2d2d;
+  margin-bottom: 0.75rem;
+}
 
 /* ========================================================================== */
 /* 3) Hero Section                                                            */
