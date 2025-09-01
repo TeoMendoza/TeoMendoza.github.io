@@ -45,36 +45,48 @@
                 Your browser does not support the video tag.
             </video> -->
             <div class="video-carousel" id="tf-carousel">
-                <div class="vc-track" id="tf-track">
+                <div class="vc-viewport"> <!-- extra top spacing comes from this wrapper -->
+                    <div class="vc-track">
                     <figure class="vc-item">
-                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-1.jpg">
-                        <source src="/videos/NinjaDash.mp4" type="video/mp4">
-                    </video>
+                        <video controls playsinline preload="metadata" poster="../media/terminal-fighter-1.jpg">
+                        <source src="../media/terminal-fighter-1.mp4" type="video/mp4">
+                        </video>
                     </figure>
+
                     <figure class="vc-item">
-                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-2.jpg">
-                        <source src="/videos/NinjaBlock.mp4" type="video/mp4">
-                    </video>
+                        <video controls playsinline preload="metadata" poster="../media/terminal-fighter-2.jpg">
+                        <source src="../media/terminal-fighter-2.mp4" type="video/mp4">
+                        </video>
                     </figure>
+
                     <figure class="vc-item">
-                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-3.jpg">
-                        <source src="/videos/NinjaJump.mp4" type="video/mp4">
-                    </video>
+                        <video controls playsinline preload="metadata" poster="../media/terminal-fighter-3.jpg">
+                        <source src="../media/terminal-fighter-3.mp4" type="video/mp4">
+                        </video>
                     </figure>
+
                     <figure class="vc-item">
-                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-4.jpg">
-                        <source src="/videos/GoblinSlam.mp4" type="video/mp4">
-                    </video>
+                        <video controls playsinline preload="metadata" poster="../media/terminal-fighter-4.jpg">
+                        <source src="../media/terminal-fighter-4.mp4" type="video/mp4">
+                        </video>
                     </figure>
+
                     <figure class="vc-item">
-                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-5.jpg">
-                        <source src="/videos/GoblinCarbUp.mp4" type="video/mp4">
-                    </video>
+                        <video controls playsinline preload="metadata" poster="../media/terminal-fighter-5.jpg">
+                        <source src="../media/terminal-fighter-5.mp4" type="video/mp4">
+                        </video>
                     </figure>
+                    </div>
                 </div>
 
-                <!-- single next arrow -->
-                <button class="vc-next" id="tf-next" aria-label="Next video">-></button>
+                <div class="vc-controls">
+                    <button class="vc-btn vc-prev" aria-label="Previous">
+                    <span class="vc-icon">←</span><span class="vc-label">Prev</span>
+                    </button>
+                    <button class="vc-btn vc-next" aria-label="Next">
+                    <span class="vc-label">Next</span><span class="vc-icon">→</span>
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -101,48 +113,113 @@
 
 
 <style>
-  .video-carousel { position: relative; width: 100%; }
+  /* container inherits your project card width */
+  .video-carousel { width: 100%; }
+
+  /* add a bit more top spacing around the video frame */
+  .vc-viewport { margin-top: 1rem; border-radius: 12px; overflow: hidden; }
+
+  /* horizontal strip that we translate left/right */
   .vc-track {
     display: flex;
-    overflow: hidden;       /* disable manual scrolling */
     width: 100%;
+    transition: transform .45s ease;
+    will-change: transform;
+    background: #000; /* avoids flashes between slides */
   }
-  .vc-item { flex: 0 0 100%; }
-  .vc-item video { width: 100%; display: block; background:#000; border-radius: 8px; }
 
-  .vc-next {
-    position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
-    width: 40px; height: 40px; border-radius: 999px; border: 0; cursor: pointer;
-    background: rgba(0,0,0,0.55); color: #fff; font-size: 24px; line-height: 40px;
-    display: grid; place-items: center;
+  /* each slide is full width */
+  .vc-item { flex: 0 0 100%; margin: 0; }
+  .vc-item video { width: 100%; display: block; background:#000; }
+
+  /* controls under the video */
+  .vc-controls {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    margin-top: .75rem;
   }
-  .vc-next:hover { background: rgba(0,0,0,0.72); }
+
+  /* button style: theme-friendly (uses current text color), subtle border, rounded */
+  .vc-btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .55rem .9rem;
+    font: inherit; color: inherit;
+    background: rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, transform .06s ease;
+  }
+  .vc-btn:hover { background: rgba(0,0,0,0.10); border-color: rgba(0,0,0,0.18); }
+  .vc-btn:active { transform: translateY(1px); }
+  .vc-icon { font-size: 20px; line-height: 1; }
+
+  /* dark mode friendly */
+  @media (prefers-color-scheme: dark) {
+    .vc-btn {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.14);
+    }
+    .vc-btn:hover {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.22);
+    }
+  }
 </style>
 
 <script>
   (function(){
-    const track = document.getElementById('tf-track');
-    const items = Array.from(track.children);
-    const next  = document.getElementById('tf-next');
+    const root  = document.getElementById('tf-carousel');
+    const track = root.querySelector('.vc-track');
+    const slides = Array.from(track.children);
+    const prev = root.querySelector('.vc-prev');
+    const next = root.querySelector('.vc-next');
+    const videos = slides.map(s => s.querySelector('video'));
     let i = 0;
 
-    function pauseAll(){
-      for (const it of items) {
-        const v = it.querySelector('video');
-        if (v) v.pause();
-      }
+    function pauseAll(){ videos.forEach(v => { try{ v.pause(); }catch(_){} }); }
+    function render(){ track.style.transform = `translateX(-${i * 100}%)`; }
+    function go(delta){ i = (i + delta + slides.length) % slides.length; pauseAll(); render(); }
+
+    // arrows
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(+1));
+
+    // keep alignment on resize
+    window.addEventListener('resize', render, {passive:true});
+
+    // Auto-generate posters if missing (grab ~0.1s frame)
+    function autoPoster(video){
+      if (video.getAttribute('poster')) return; // already has a poster
+      const make = () => {
+        // ensure we have a decodable frame
+        const seekTime = Math.min(0.1, (video.duration || 0.1) - 0.01);
+        const toFrame = () => {
+          const c = document.createElement('canvas');
+          c.width = video.videoWidth || 1280;
+          c.height = video.videoHeight || 720;
+          const ctx = c.getContext('2d');
+          try {
+            ctx.drawImage(video, 0, 0, c.width, c.height);
+            video.setAttribute('poster', c.toDataURL('image/jpeg', 0.8));
+          } catch (e) { /* cross-origin or codec; just skip */ }
+          // reset without playing
+          try { video.currentTime = 0; video.pause(); } catch(e){}
+        };
+        // Seek then capture
+        const onSeeked = () => { video.removeEventListener('seeked', onSeeked); toFrame(); };
+        video.addEventListener('seeked', onSeeked, {once:true});
+        try { video.currentTime = seekTime; } catch(e){ /* some browsers require loadeddata */ }
+      };
+      if (video.readyState >= 2) make();
+      else video.addEventListener('loadeddata', make, {once:true});
+      // ensure we actually load enough to draw a frame
+      video.preload = 'auto';
     }
+    videos.forEach(autoPoster);
 
-    function goTo(idx){
-      i = (idx + items.length) % items.length;        // loop
-      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
-    }
-
-    next.addEventListener('click', () => { pauseAll(); goTo(i + 1); });
-
-    // keep slide alignment on resize
-    window.addEventListener('resize', () => {
-      track.scrollLeft = i * track.clientWidth;
-    });
+    // init
+    render();
   })();
 </script>
