@@ -159,8 +159,15 @@
   .vc-btn:hover { filter: brightness(1.1); }
   .vc-btn:active { transform: translateY(1px); }
 
-  /* hide arrows when disabled (no wrap) */
-  .vc-btn[disabled] { visibility: hidden; }
+  .vc-btn[disabled] {
+  visibility: visible;      /* ensure it shows */
+  opacity: 0.5;             /* dim it */
+  cursor: not-allowed;      /* visual hint */
+  filter: none;             /* prevent hover brighten */
+  }
+
+  .vc-btn[disabled]:hover { filter: none; }
+
 </style>
 
 <script>
