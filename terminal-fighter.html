@@ -38,12 +38,44 @@
             <h3>Gameplay Video</h3>
             <p>Short showcase of core movement, ability, and combat interactions.</p>
 
-            <!-- Local video file (recommended if you host the mp4 yourself) -->
+            <!-- Local video file (recommended if you host the mp4 yourself)
             <video controls width="100%" style="border-radius: 8px; margin-top: 1rem;"
                    poster="../media/terminal-fighter-thumb.jpg">
                 <source src="../media/terminal-fighter.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
+            </video> -->
+            <div class="video-carousel" id="tf-carousel">
+                <div class="vc-track" id="tf-track">
+                    <figure class="vc-item">
+                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-1.jpg">
+                        <source src="/videos/NinjaDash.mp4" type="video/mp4">
+                    </video>
+                    </figure>
+                    <figure class="vc-item">
+                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-2.jpg">
+                        <source src="/videos/NinjaBlock.mp4" type="video/mp4">
+                    </video>
+                    </figure>
+                    <figure class="vc-item">
+                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-3.jpg">
+                        <source src="/videos/NinjaJump.mp4" type="video/mp4">
+                    </video>
+                    </figure>
+                    <figure class="vc-item">
+                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-4.jpg">
+                        <source src="/videos/GoblinSlam.mp4" type="video/mp4">
+                    </video>
+                    </figure>
+                    <figure class="vc-item">
+                    <video controls playsinline preload="metadata" poster="../media/terminal-fighter-5.jpg">
+                        <source src="/videos/GoblinCarbUp.mp4" type="video/mp4">
+                    </video>
+                    </figure>
+                </div>
+
+                <!-- single next arrow -->
+                <button class="vc-next" id="tf-next" aria-label="Next video">-></button>
+            </div>
 
         </div>
 
@@ -66,3 +98,51 @@
 
 </body>
 </html>
+
+
+<style>
+  .video-carousel { position: relative; width: 100%; }
+  .vc-track {
+    display: flex;
+    overflow: hidden;       /* disable manual scrolling */
+    width: 100%;
+  }
+  .vc-item { flex: 0 0 100%; }
+  .vc-item video { width: 100%; display: block; background:#000; border-radius: 8px; }
+
+  .vc-next {
+    position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
+    width: 40px; height: 40px; border-radius: 999px; border: 0; cursor: pointer;
+    background: rgba(0,0,0,0.55); color: #fff; font-size: 24px; line-height: 40px;
+    display: grid; place-items: center;
+  }
+  .vc-next:hover { background: rgba(0,0,0,0.72); }
+</style>
+
+<script>
+  (function(){
+    const track = document.getElementById('tf-track');
+    const items = Array.from(track.children);
+    const next  = document.getElementById('tf-next');
+    let i = 0;
+
+    function pauseAll(){
+      for (const it of items) {
+        const v = it.querySelector('video');
+        if (v) v.pause();
+      }
+    }
+
+    function goTo(idx){
+      i = (idx + items.length) % items.length;        // loop
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+    }
+
+    next.addEventListener('click', () => { pauseAll(); goTo(i + 1); });
+
+    // keep slide alignment on resize
+    window.addEventListener('resize', () => {
+      track.scrollLeft = i * track.clientWidth;
+    });
+  })();
+</script>
