@@ -266,7 +266,7 @@ nav a.active {
 }
 
 .project-card li::before {
-    content: "— ";              /* subtle dash as marker */
+    content: "- ";              /* subtle dash as marker */
     position: absolute;
     left: -1.2em;               /* aligns dash to the left of text */
     color: #6a6a6a;                /* softer than main text */
