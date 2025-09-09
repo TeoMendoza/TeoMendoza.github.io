@@ -142,8 +142,8 @@ nav a.active {
 }
 
 .inline-link {
-  color: #3c3c3c;         /* accent color */
-  font-weight: 600;        /* a bit bolder */
+  color: #4a4a4a;         /* accent color */
+  font-weight: 450;        /* a bit bolder */
   text-decoration: none;   /* no underline by default */
   font-size: inherit;      /* same size as surrounding text */
 }
@@ -153,7 +153,7 @@ nav a.active {
 }
 
 .inline-link:visited {
-  color: #3c3c3c;
+  color: #4a4a4a;
 }
 
 /* ========================================================================== */
