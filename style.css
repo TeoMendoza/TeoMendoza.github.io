@@ -258,7 +258,7 @@ nav a.active {
 }
 
 .project-card li {
-    color: inherit;             /* match surrounding text color */
+    color: #6a6a6a;             /* match surrounding text color */
     font-weight: 400;           /* normal text weight */
     line-height: 1.6;           /* breathing room between lines */
     margin: 0.25em 0;           /* vertical spacing between items */
@@ -269,7 +269,7 @@ nav a.active {
     content: "— ";              /* subtle dash as marker */
     position: absolute;
     left: -1.2em;               /* aligns dash to the left of text */
-    color: #666;                /* softer than main text */
+    color: #6a6a6a;                /* softer than main text */
 }
 
 
