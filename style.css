@@ -141,20 +141,19 @@ nav a.active {
     margin-top: 0.5rem;
 }
 
-a {
-  color: #4a4a4a;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: inherit;
+.inline-link {
+  color: #3c3c3c;         /* accent color */
+  font-weight: 600;        /* a bit bolder */
+  text-decoration: none;   /* no underline by default */
+  font-size: inherit;      /* same size as surrounding text */
 }
 
-a:hover {
-  color: #0077b6;
+.inline-link:hover {
   text-decoration: underline;
 }
 
-a:visited {
-  color: #4a4a4a;
+.inline-link:visited {
+  color: #3c3c3c;
 }
 
 /* ========================================================================== */
