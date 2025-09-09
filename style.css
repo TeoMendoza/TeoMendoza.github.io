@@ -252,14 +252,26 @@ nav a.active {
 }
 
 .project-card ul {
-    margin: 0.5em 0 1em 1.5em;
-    padding-left: 1.2em;
-    line-height: 1.6;        
+    list-style: none;           /* remove default bullets */
+    margin: 0.5em 0 1em 1.5em;  /* add indentation + spacing */
+    padding: 0;
 }
 
-.project-card .indented-list {
-    margin-left: 1.5em;
+.project-card li {
+    color: inherit;             /* match surrounding text color */
+    font-weight: 400;           /* normal text weight */
+    line-height: 1.6;           /* breathing room between lines */
+    margin: 0.25em 0;           /* vertical spacing between items */
+    position: relative;
 }
+
+.project-card li::before {
+    content: "— ";              /* subtle dash as marker */
+    position: absolute;
+    left: -1.2em;               /* aligns dash to the left of text */
+    color: #666;                /* softer than main text */
+}
+
 
 /* ========================================================================== */
 /* 6) Projects Index Grid & Tiles                                             */
