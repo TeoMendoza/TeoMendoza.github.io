@@ -141,6 +141,21 @@ nav a.active {
     margin-top: 0.5rem;
 }
 
+a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: inherit;
+}
+
+a:hover {
+  color: #0077b6;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #4a4a4a;
+}
 
 /* ========================================================================== */
 /* 4) Buttons (Base styles shared across components)                          */
