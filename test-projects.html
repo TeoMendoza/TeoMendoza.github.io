@@ -1,86 +1,66 @@
-<section class="projects-carousel" aria-label="Featured projects">
-  <header class="projects-header">
-    <div class="projects-controls">
-      <button class="proj-btn prev" aria-label="Previous projects">←</button>
-      <button class="proj-btn next" aria-label="Next projects">→</button>
+<section class="proj-carousel" aria-label="Projects">
+  <header class="projc-head">
+    <h2 class="h3-large">Projects</h2>
+    <div class="projc-controls">
+      <button class="projc-btn prev" aria-label="Previous projects">‹</button>
+      <button class="projc-btn next" aria-label="Next projects">›</button>
     </div>
   </header>
 
-  <div class="projects-viewport">
-    <ul class="projects-track">
-      <!-- Card -->
-      <li class="project-card">
-        <div class="thumb" aria-hidden="true">
-          <!-- Optional image; remove <img> if you don't have one -->
-          <!-- <img src="/images/3d-brawler.jpg" alt="" /> -->
-        </div>
-        <div class="project-body">
+  <div class="projc-viewport">
+    <ul class="projc-track">
+      <!-- CARD -->
+      <li class="projc-card">
+        <div class="projc-body">
           <h3>3D Brawler</h3>
-          <p class="desc">
-            A fast-paced FFA arena fighter of 8-12 players with realistic physics, dynamic scoring,
-            and SpacetimeDB server-authority.
+          <p class="projc-desc">Fast-paced FFA arena fighter (8–12 players) with realistic physics and a dynamic scoring system. Built on SpacetimeDB.</p>
+          <p class="projc-meta">
+            <span class="projc-chip">Unity</span>
+            <span class="projc-chip">SpacetimeDB</span>
+            <span class="projc-chip">Game Design</span>
+            <span class="projc-tag projc-tag--solo">Solo</span>
           </p>
-
-          <ul class="skills">
-            <li>Unity</li><li>SpacetimeDB</li><li>Game Design</li><li>State Machines</li>
-          </ul>
-
-          <p class="meta">
-            <span class="pill pill-solo">Solo</span>
-          </p>
-
-          <a class="proj-link" href="/3d-brawler.html">View Project</a>
+          <a class="btn" href="/3d-brawler.html">View Project</a>
         </div>
       </li>
 
-      <li class="project-card">
-        <div class="thumb"></div>
-        <div class="project-body">
+      <li class="projc-card">
+        <div class="projc-body">
           <h3>Terminal Fighter</h3>
-          <p class="desc">
-            A 2D ability-based fighter with LAN multiplayer and fast iteration on combat feel.
+          <p class="projc-desc">2D ability-based fighter with LAN multiplayer and rapid iteration on combat feel.</p>
+          <p class="projc-meta">
+            <span class="projc-chip">Netcode</span>
+            <span class="projc-chip">Input Systems</span>
+            <span class="projc-tag">Collaborative</span>
           </p>
-          <ul class="skills">
-            <li>Godot/Unity</li><li>Netcode</li><li>Input Systems</li>
-          </ul>
-          <p class="meta">
-            <span class="pill">Collaborative</span>
-          </p>
-          <a class="proj-link" href="/terminal-fighter.html">View Project</a>
+          <a class="btn" href="/terminal-fighter.html">View Project</a>
         </div>
       </li>
 
-      <li class="project-card">
-        <div class="thumb"></div>
-        <div class="project-body">
+      <li class="projc-card">
+        <div class="projc-body">
           <h3>Family Dinner</h3>
-          <p class="desc">
-            Narrative/character design exploration for a 3D murder-mystery with cutscene demo.
+          <p class="projc-desc">Narrative & character design for a 3D murder-mystery with a cutscene demo.</p>
+          <p class="projc-meta">
+            <span class="projc-chip">Narrative Design</span>
+            <span class="projc-chip">Character Systems</span>
+            <span class="projc-tag projc-tag--solo">Solo</span>
           </p>
-          <ul class="skills">
-            <li>Narrative Design</li><li>Character Systems</li><li>UX Writing</li>
-          </ul>
-          <p class="meta">
-            <span class="pill pill-solo">Solo</span>
-          </p>
-          <a class="proj-link" href="/murder-mystery.html">View Project</a>
+          <a class="btn" href="/murder-mystery.html">View Project</a>
         </div>
       </li>
 
-      <li class="project-card">
-        <div class="thumb"></div>
-        <div class="project-body">
+      <li class="projc-card">
+        <div class="projc-body">
           <h3>Pedalogical</h3>
-          <p class="desc">
-            An AI-powered platform for instructors/students with logging, analytics, and guided modules.
+          <p class="projc-desc">AI-powered platform with logging, analytics, and guided modules for instructors and students.</p>
+          <p class="projc-meta">
+            <span class="projc-chip">.NET/Blazor</span>
+            <span class="projc-chip">EF Core</span>
+            <span class="projc-chip">Prompt Design</span>
+            <span class="projc-tag">Collaborative</span>
           </p>
-          <ul class="skills">
-            <li>.NET/Blazor</li><li>EF Core</li><li>Prompt Design</li><li>Research</li>
-          </ul>
-          <p class="meta">
-            <span class="pill">Collaborative</span>
-          </p>
-          <a class="proj-link" href="/pedalogical.html" target="_blank" rel="noopener">View Project</a>
+          <a class="btn" href="/pedalogical.html" target="_blank" rel="noopener">View Project</a>
         </div>
       </li>
     </ul>
@@ -88,124 +68,126 @@
 </section>
 
 
+
 <style> 
-:root{
-  --proj-gap: 1rem;
-  --proj-radius: 16px;
-  --proj-card-bg: #fff;
-  --proj-text: #1f2937;
-  --proj-muted: #6b7280;
-  --proj-border: #e5e7eb;
-  --chip-bg: #f3f4f6;
-  --chip-text: #374151;
-  --accent: #111827;
+/* ===== Projects Carousel (scoped) ===== */
+.proj-carousel { padding: 2rem 1.5rem; max-width: 1400px; margin: 0 auto; }
+
+.projc-head {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom: 0.75rem;
+}
+.projc-controls { display:flex; gap: .5rem; }
+.projc-btn{
+  inline-size:2.4rem; block-size:2.4rem;
+  border-radius:8px; border:1px solid #e0e0e0; background:#fff; color:#2d2d2d;
+  font-size:1.25rem; line-height:1; display:grid; place-items:center; cursor:pointer;
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.projc-btn:hover{ background:#f8f9fa; transform: translateY(-2px); box-shadow: 0 8px 12px -4px rgba(0,0,0,.08); }
+.projc-btn:disabled{ opacity:.4; cursor:not-allowed; transform:none; box-shadow:none; }
+
+.projc-viewport{
+  overflow:hidden; /* arrow-only navigation */
+  border-radius: 12px;
+}
+.projc-track{
+  display:flex; gap: 1.25rem;
+  list-style:none; margin:0; padding:0;
+  transform: translateX(0);
+  transition: transform .35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.projects-carousel { margin-block: 2rem; }
-.projects-header {
-  display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;
+/* Show exactly TWO wide rectangles per view on desktop */
+.projc-card{
+  flex: 0 0 calc(50% - .625rem); /* two per view (gap/2) */
+  display:flex;
 }
-.projects-header h2 { margin:0; font-size:1.25rem; }
+.projc-body{
+  /* matches your card aesthetic */
+  background:#ffffff; color:#4a4a4a;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #2d2d2d;
+  border-radius:12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.05);
+  padding: 1.25rem 1.5rem;
+  width:100%;
 
-.projects-controls { display:flex; gap:0.5rem; }
-.proj-btn{
-  inline-size:2.2rem; block-size:2.2rem; border-radius:999px; border:1px solid var(--proj-border);
-  background:#fff; cursor:pointer; font-size:1.25rem; line-height:1; display:grid; place-items:center;
-}
-.proj-btn:disabled{ opacity:.4; cursor:not-allowed; }
-
-.projects-viewport{
-  overflow:auto;
-  scroll-snap-type:x mandatory;
-  border-radius: var(--proj-radius);
-}
-.projects-viewport::-webkit-scrollbar{ display:none; } /* clean look */
-
-.projects-track{
-  display:flex; gap:var(--proj-gap);
-  list-style:none; padding:0; margin:0;
+  /* WIDE RECTANGLE feel */
+  min-height: 160px;          /* short/tight height */
+  display:grid; gap:.6rem;    /* compact rhythm */
 }
 
-.project-card{
-  scroll-snap-align:start;
-  background:var(--proj-card-bg);
-  border:1px solid var(--proj-border);
-  border-radius: var(--proj-radius);
-  overflow:hidden;
-  inline-size: calc(50% - var(--proj-gap)/2); /* two per view on desktop */
-  display:grid; grid-template-rows:auto 1fr;
+.projc-body h3{
+  margin:0; color:#2d2d2d; font-size:1.25rem; font-weight:600;
+}
+.projc-desc{ margin:0; color:#6a6a6a; line-height:1.6; }
+.projc-meta{ margin:0; display:flex; flex-wrap:wrap; gap:.4rem .5rem; align-items:center; }
+
+.projc-chip{
+  background:#f3f4f6; color:#4a4a4a; border:1px solid #e0e0e0;
+  font-size:.85rem; padding:.25rem .5rem; border-radius:999px; white-space:nowrap;
+}
+.projc-tag{
+  background:#eef2ff; color:#3730a3; border:1px solid #e0e0e0;
+  font-size:.85rem; padding:.25rem .55rem; border-radius:999px;
+}
+.projc-tag--solo{ background:#ecfdf5; color:#065f46; }
+
+/* Mobile: one per view (still arrow-only) */
+@media (max-width: 900px){
+  .projc-card{ flex: 0 0 100%; }
 }
 
-/* One per view on small screens */
-@media (max-width: 720px){
-  .project-card{ inline-size: 100%; }
-}
-
-.thumb{
-  aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #eceff1, #e5e7eb 60%, #f3f4f6);
-  border-bottom:1px solid var(--proj-border);
-}
-.thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-.project-body{ padding:1rem; display:grid; gap:0.6rem; color:var(--proj-text); }
-.project-body h3{ margin:0; font-size:1.05rem; }
-.desc{ margin:0; color:var(--proj-muted); line-height:1.45; }
-
-.skills{
-  display:flex; flex-wrap:wrap; gap:.4rem .5rem; list-style:none; padding:0; margin:0;
-}
-.skills li{
-  background:var(--chip-bg); color:var(--chip-text);
-  font-size:.85rem; padding:.25rem .5rem; border-radius:999px;
-  white-space:nowrap;
-}
-
-.meta{ margin:0; }
-.pill{
-  display:inline-block; padding:.25rem .5rem; border-radius:999px; font-size:.8rem;
-  background:#eef2ff; color:#3730a3;
-}
-.pill-solo{ background:#ecfdf5; color:#065f46; }
-
-.proj-link{
-  margin-top:.25rem;
-  justify-self:start;
-  padding:.45rem .7rem;
-  border-radius:10px;
-  border:1px solid var(--proj-border);
-  text-decoration:none; color:var(--accent);
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-.proj-link:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 8px 12px rgba(0,0,0,.06);
-}
 </style>
 
 <script>
-  (function(){
-    const wrap = document.querySelector('.projects-carousel');
-    if(!wrap) return;
+(function(){
+  const root = document.querySelector('.proj-carousel');
+  if(!root) return;
 
-    const viewport = wrap.querySelector('.projects-viewport');
-    const prev = wrap.querySelector('.proj-btn.prev');
-    const next = wrap.querySelector('.proj-btn.next');
+  const viewport = root.querySelector('.projc-viewport');
+  const track = root.querySelector('.projc-track');
+  const prev = root.querySelector('.projc-btn.prev');
+  const next = root.querySelector('.projc-btn.next');
+  const cards = Array.from(root.querySelectorAll('.projc-card'));
 
-    function updateButtons(){
-      const maxScroll = viewport.scrollWidth - viewport.clientWidth - 1;
-      prev.disabled = viewport.scrollLeft <= 0;
-      next.disabled = viewport.scrollLeft >= maxScroll;
-    }
-    updateButtons();
+  let pageIndex = 0;
 
-    prev.addEventListener('click', () => {
-      viewport.scrollBy({ left: -viewport.clientWidth, behavior: 'smooth' });
-    });
-    next.addEventListener('click', () => {
-      viewport.scrollBy({ left: viewport.clientWidth, behavior: 'smooth' });
-    });
-    viewport.addEventListener('scroll', updateButtons);
-    window.addEventListener('resize', updateButtons);
-  })();
+  function cardsPerView(){
+    // Match CSS: two per view >=900px, else one
+    return window.matchMedia('(max-width: 900px)').matches ? 1 : 2;
+  }
+
+  function pageCount(){
+    const per = cardsPerView();
+    return Math.max(1, Math.ceil(cards.length / per));
+  }
+
+  function goToPage(i){
+    const per = cardsPerView();
+    const clamped = Math.max(0, Math.min(i, pageCount()-1));
+    pageIndex = clamped;
+
+    // Move by viewport width (so exactly 2 cards—or 1 on mobile—slide in)
+    const x = viewport.clientWidth * clamped;
+    track.style.transform = `translateX(-${x}px)`;
+
+    prev.disabled = pageIndex === 0;
+    next.disabled = pageIndex >= pageCount() - 1;
+  }
+
+  function onResize(){
+    // Reset transform then go to current page to avoid rounding artifacts
+    track.style.transform = 'translateX(0)';
+    goToPage(pageIndex);
+  }
+
+  prev.addEventListener('click', () => goToPage(pageIndex - 1));
+  next.addEventListener('click', () => goToPage(pageIndex + 1));
+  window.addEventListener('resize', onResize, { passive: true });
+
+  // Initialize
+  goToPage(0);
+})();
 </script>
