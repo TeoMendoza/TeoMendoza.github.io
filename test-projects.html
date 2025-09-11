@@ -1,193 +1,295 @@
-<section class="proj-carousel" aria-label="Projects">
-  <header class="projc-head">
-    <h2 class="h3-large">Projects</h2>
-    <div class="projc-controls">
-      <button class="projc-btn prev" aria-label="Previous projects">‹</button>
-      <button class="projc-btn next" aria-label="Next projects">›</button>
-    </div>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects – Two-Up Carousel</title>
 
-  <div class="projc-viewport">
-    <ul class="projc-track">
-      <!-- CARD -->
-      <li class="projc-card">
-        <div class="projc-body">
-          <h3>3D Brawler</h3>
-          <p class="projc-desc">Fast-paced FFA arena fighter (8–12 players) with realistic physics and a dynamic scoring system. Built on SpacetimeDB.</p>
-          <p class="projc-meta">
-            <span class="projc-chip">Unity</span>
-            <span class="projc-chip">SpacetimeDB</span>
-            <span class="projc-chip">Game Design</span>
-            <span class="projc-tag projc-tag--solo">Solo</span>
-          </p>
+  <!-- If you have a global style.css, you can link it here.
+       Not required for this component to work, but your .btn class will then match sitewide. -->
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+
+  <style>
+    /* ===== Projects two-up flashcard carousel (scoped to .projx) ===== */
+    .projx{
+      position: relative;
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .projx h2{
+      margin: 0 0 0.5rem 0;
+      font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+      color: #2d2d2d;
+    }
+
+    /* Left/right arrows:
+       Uses your .btn look (dark bg, rounded, hover jump).
+       If your global .btn exists, this will inherit; otherwise it still looks fine. */
+    .projx-arrow{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0.6rem 0.9rem;
+      border-radius: 8px;
+      z-index: 5;
+      background: #2d2d2d;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .projx-arrow:hover{
+      transform: translateY(-50%) translateY(-3px);
+      background: #1a1a1a;
+      box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
+    }
+    .projx-arrow:active{
+      transform: translateY(-50%) translateY(-1px);
+      box-shadow: 0 8px 12px -4px rgba(0,0,0,0.08);
+    }
+    .projx-arrow--left{ left: 0.25rem; }
+    .projx-arrow--right{ right: 0.25rem; }
+
+    /* Two-up window (no scroll; we swap content in-place) */
+    .projx-window{
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* exactly two cards on desktop */
+      gap: 1rem;
+      align-items: stretch;
+      position: relative;
+      padding: 0 3rem; /* breathing room so arrows don’t overlap cards */
+    }
+
+    /* Flashcard proportions: short & wide rectangles */
+    .projx-card{
+      background: #ffffff;
+      color: #4a4a4a;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #2d2d2d;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      padding: 1rem 1.25rem;
+      min-height: 140px;   /* short flashcard feel */
+      display: grid;
+      grid-template-rows: auto auto auto;
+      gap: 0.4rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .projx-card:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
+    }
+
+    .projx-card h3{
+      margin: 0;
+      color: #2d2d2d;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .projx-desc{
+      margin: 0;
+      color: #6a6a6a;
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* keep it tight */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .projx-meta{
+      display: flex;
+      align-items: center;
+      gap: .4rem .5rem;
+      flex-wrap: wrap;
+      margin-top: .2rem;
+    }
+
+    /* Chips styled to echo your button aesthetics without overpowering the card */
+    .projx-chip{
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #e0e0e0;
+      background: #f8f9fa;
+      color: #4a4a4a;
+      padding: .25rem .5rem;
+      border-radius: 8px;
+      font-size: .85rem;
+      white-space: nowrap;
+    }
+    .projx-tag{
+      display: inline-flex;
+      align-items: center;
+      background: #2d2d2d;
+      color: #fff;
+      padding: .25rem .6rem;
+      border-radius: 8px;
+      font-size: .85rem;
+      white-space: nowrap;
+    }
+
+    .projx-actions{ margin-top: .2rem; }
+    .projx-actions .btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #2d2d2d;
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .projx-actions .btn:hover{
+      transform: translateY(-3px);
+      background: #1a1a1a;
+      box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
+    }
+    .projx-actions .btn:active{
+      transform: translateY(-1px);
+      box-shadow: 0 8px 12px -4px rgba(0,0,0,0.08);
+    }
+
+    /* Source list (all projects) kept off-screen but in DOM; JS pulls from here */
+    .projx-source{ display: none; }
+
+    /* Mobile: drop to one card (still arrow nav) */
+    @media (max-width: 820px){
+      .projx-window{
+        grid-template-columns: 1fr;
+      }
+      .projx-arrow--left{ left: .5rem; }
+      .projx-arrow--right{ right: .5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="projx" aria-label="Projects">
+    <h2>Projects</h2>
+
+    <!-- arrows like your video UI -->
+    <button class="projx-arrow projx-arrow--left" aria-label="Previous projects">‹</button>
+    <button class="projx-arrow projx-arrow--right" aria-label="Next projects">›</button>
+
+    <div class="projx-window" role="list">
+      <!-- Two visible slots -->
+      <article class="projx-card" role="listitem"></article>
+      <article class="projx-card" role="listitem"></article>
+    </div>
+
+    <!-- All projects live here as plain HTML; no JSON. Add/remove as needed. -->
+    <ul class="projx-source">
+      <li>
+        <h3>3D Brawler</h3>
+        <p class="projx-desc">Fast-paced FFA arena fighter (8–12 players) with realistic physics and a dynamic scoring system. Built on SpacetimeDB.</p>
+        <div class="projx-meta">
+          <span class="projx-chip">Unity</span>
+          <span class="projx-chip">SpacetimeDB</span>
+          <span class="projx-chip">Game Design</span>
+          <span class="projx-chip">State Machines</span>
+          <span class="projx-tag">Solo</span>
+        </div>
+        <div class="projx-actions">
           <a class="btn" href="/3d-brawler.html">View Project</a>
         </div>
       </li>
 
-      <li class="projc-card">
-        <div class="projc-body">
-          <h3>Terminal Fighter</h3>
-          <p class="projc-desc">2D ability-based fighter with LAN multiplayer and rapid iteration on combat feel.</p>
-          <p class="projc-meta">
-            <span class="projc-chip">Netcode</span>
-            <span class="projc-chip">Input Systems</span>
-            <span class="projc-tag">Collaborative</span>
-          </p>
+      <li>
+        <h3>Terminal Fighter</h3>
+        <p class="projx-desc">2D ability-based fighter with LAN multiplayer and rapid iteration on combat feel.</p>
+        <div class="projx-meta">
+          <span class="projx-chip">Netcode</span>
+          <span class="projx-chip">Input Systems</span>
+          <span class="projx-tag">Collaborative</span>
+        </div>
+        <div class="projx-actions">
           <a class="btn" href="/terminal-fighter.html">View Project</a>
         </div>
       </li>
 
-      <li class="projc-card">
-        <div class="projc-body">
-          <h3>Family Dinner</h3>
-          <p class="projc-desc">Narrative & character design for a 3D murder-mystery with a cutscene demo.</p>
-          <p class="projc-meta">
-            <span class="projc-chip">Narrative Design</span>
-            <span class="projc-chip">Character Systems</span>
-            <span class="projc-tag projc-tag--solo">Solo</span>
-          </p>
+      <li>
+        <h3>Family Dinner</h3>
+        <p class="projx-desc">Narrative &amp; character design for a 3D murder-mystery with a cutscene demo.</p>
+        <div class="projx-meta">
+          <span class="projx-chip">Narrative Design</span>
+          <span class="projx-chip">Character Systems</span>
+          <span class="projx-chip">UX Writing</span>
+          <span class="projx-tag">Solo</span>
+        </div>
+        <div class="projx-actions">
           <a class="btn" href="/murder-mystery.html">View Project</a>
         </div>
       </li>
 
-      <li class="projc-card">
-        <div class="projc-body">
-          <h3>Pedalogical</h3>
-          <p class="projc-desc">AI-powered platform with logging, analytics, and guided modules for instructors and students.</p>
-          <p class="projc-meta">
-            <span class="projc-chip">.NET/Blazor</span>
-            <span class="projc-chip">EF Core</span>
-            <span class="projc-chip">Prompt Design</span>
-            <span class="projc-tag">Collaborative</span>
-          </p>
+      <li>
+        <h3>Pedalogical</h3>
+        <p class="projx-desc">AI-powered platform with logging, analytics, and guided modules.</p>
+        <div class="projx-meta">
+          <span class="projx-chip">.NET/Blazor</span>
+          <span class="projx-chip">EF Core</span>
+          <span class="projx-chip">Prompt Design</span>
+          <span class="projx-chip">Research</span>
+          <span class="projx-tag">Collaborative</span>
+        </div>
+        <div class="projx-actions">
           <a class="btn" href="/pedalogical.html" target="_blank" rel="noopener">View Project</a>
         </div>
       </li>
     </ul>
-  </div>
-</section>
+  </section>
 
+  <script>
+    (function(){
+      const root = document.querySelector('.projx');
+      if(!root) return;
 
+      const leftBtn   = root.querySelector('.projx-arrow--left');
+      const rightBtn  = root.querySelector('.projx-arrow--right');
+      const windowEl  = root.querySelector('.projx-window');
+      const slots     = Array.from(windowEl.querySelectorAll('.projx-card'));
+      const sourceLis = Array.from(root.querySelectorAll('.projx-source > li'));
 
-<style> 
-/* ===== Projects Carousel (scoped) ===== */
-.proj-carousel { padding: 2rem 1.5rem; max-width: 1400px; margin: 0 auto; }
+      // Build an array of project HTML strings from the hidden list
+      const projects = sourceLis.map(li => li.innerHTML.trim());
+      const count = projects.length;
 
-.projc-head {
-  display:flex; justify-content:space-between; align-items:center;
-  margin-bottom: 0.75rem;
-}
-.projc-controls { display:flex; gap: .5rem; }
-.projc-btn{
-  inline-size:2.4rem; block-size:2.4rem;
-  border-radius:8px; border:1px solid #e0e0e0; background:#fff; color:#2d2d2d;
-  font-size:1.25rem; line-height:1; display:grid; place-items:center; cursor:pointer;
-  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
-}
-.projc-btn:hover{ background:#f8f9fa; transform: translateY(-2px); box-shadow: 0 8px 12px -4px rgba(0,0,0,.08); }
-.projc-btn:disabled{ opacity:.4; cursor:not-allowed; transform:none; box-shadow:none; }
+      let startIndex = 0; // index of the left card currently shown
 
-.projc-viewport{
-  overflow:hidden; /* arrow-only navigation */
-  border-radius: 12px;
-}
-.projc-track{
-  display:flex; gap: 1.25rem;
-  list-style:none; margin:0; padding:0;
-  transform: translateX(0);
-  transition: transform .35s cubic-bezier(0.22, 1, 0.36, 1);
-}
+      function idx(i){ return (i + count) % count; }
 
-/* Show exactly TWO wide rectangles per view on desktop */
-.projc-card{
-  flex: 0 0 calc(50% - .625rem); /* two per view (gap/2) */
-  display:flex;
-}
-.projc-body{
-  /* matches your card aesthetic */
-  background:#ffffff; color:#4a4a4a;
-  border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d;
-  border-radius:12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,.05);
-  padding: 1.25rem 1.5rem;
-  width:100%;
+      function render(){
+        const leftIndex  = idx(startIndex);
+        const rightIndex = idx(startIndex + 1);
+        slots[0].innerHTML = projects[leftIndex];
+        slots[1].innerHTML = projects[rightIndex];
+      }
 
-  /* WIDE RECTANGLE feel */
-  min-height: 160px;          /* short/tight height */
-  display:grid; gap:.6rem;    /* compact rhythm */
-}
+      leftBtn.addEventListener('click', () => {
+        startIndex = idx(startIndex - 1); // shift by one to the left
+        render();
+      });
 
-.projc-body h3{
-  margin:0; color:#2d2d2d; font-size:1.25rem; font-weight:600;
-}
-.projc-desc{ margin:0; color:#6a6a6a; line-height:1.6; }
-.projc-meta{ margin:0; display:flex; flex-wrap:wrap; gap:.4rem .5rem; align-items:center; }
+      rightBtn.addEventListener('click', () => {
+        startIndex = idx(startIndex + 1); // shift by one to the right
+        render();
+      });
 
-.projc-chip{
-  background:#f3f4f6; color:#4a4a4a; border:1px solid #e0e0e0;
-  font-size:.85rem; padding:.25rem .5rem; border-radius:999px; white-space:nowrap;
-}
-.projc-tag{
-  background:#eef2ff; color:#3730a3; border:1px solid #e0e0e0;
-  font-size:.85rem; padding:.25rem .55rem; border-radius:999px;
-}
-.projc-tag--solo{ background:#ecfdf5; color:#065f46; }
+      // Init
+      render();
 
-/* Mobile: one per view (still arrow-only) */
-@media (max-width: 900px){
-  .projc-card{ flex: 0 0 100%; }
-}
-
-</style>
-
-<script>
-(function(){
-  const root = document.querySelector('.proj-carousel');
-  if(!root) return;
-
-  const viewport = root.querySelector('.projc-viewport');
-  const track = root.querySelector('.projc-track');
-  const prev = root.querySelector('.projc-btn.prev');
-  const next = root.querySelector('.projc-btn.next');
-  const cards = Array.from(root.querySelectorAll('.projc-card'));
-
-  let pageIndex = 0;
-
-  function cardsPerView(){
-    // Match CSS: two per view >=900px, else one
-    return window.matchMedia('(max-width: 900px)').matches ? 1 : 2;
-  }
-
-  function pageCount(){
-    const per = cardsPerView();
-    return Math.max(1, Math.ceil(cards.length / per));
-  }
-
-  function goToPage(i){
-    const per = cardsPerView();
-    const clamped = Math.max(0, Math.min(i, pageCount()-1));
-    pageIndex = clamped;
-
-    // Move by viewport width (so exactly 2 cards—or 1 on mobile—slide in)
-    const x = viewport.clientWidth * clamped;
-    track.style.transform = `translateX(-${x}px)`;
-
-    prev.disabled = pageIndex === 0;
-    next.disabled = pageIndex >= pageCount() - 1;
-  }
-
-  function onResize(){
-    // Reset transform then go to current page to avoid rounding artifacts
-    track.style.transform = 'translateX(0)';
-    goToPage(pageIndex);
-  }
-
-  prev.addEventListener('click', () => goToPage(pageIndex - 1));
-  next.addEventListener('click', () => goToPage(pageIndex + 1));
-  window.addEventListener('resize', onResize, { passive: true });
-
-  // Initialize
-  goToPage(0);
-})();
-</script>
+      // Optional: keyboard nav (left/right arrows)
+      root.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft')  { leftBtn.click(); }
+        if (e.key === 'ArrowRight') { rightBtn.click(); }
+      });
+      root.tabIndex = 0; // make section focusable for keyboard nav
+    })();
+  </script>
+</body>
+</html>
