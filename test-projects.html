@@ -5,10 +5,20 @@
 
     <div class="project-actions--test">
       <a class="btn--test" href="/3d-brawler.html">View Project</a>
-      <span class="skill-chip--test">Unity</span>
-      <span class="skill-chip--test">C#</span>
-      <span class="skill-chip--test">SpacetimeDB</span>
-      <span class="skill-chip--test">Netcode</span>
+    </div>
+
+    <div class="skills-expander--test" tabindex="0">
+      <div class="skills-expander__handle--test">
+        <span class="skills-expander__chev--test">▾</span>
+        <span>Skills</span>
+      </div>
+      <div class="skill-chips--test">
+        <span class="skill-chip--test">Unity</span>
+        <span class="skill-chip--test">C#</span>
+        <span class="skill-chip--test">SpacetimeDB</span>
+        <span class="skill-chip--test">Server-Authoritative</span>
+        <span class="skill-chip--test">Netcode</span>
+      </div>
     </div>
   </div>
 
@@ -18,9 +28,19 @@
 
     <div class="project-actions--test">
       <a class="btn--test" href="/terminal-fighter.html">View Project</a>
-      <span class="skill-chip--test">Godot</span>
-      <span class="skill-chip--test">GDScript</span>
-      <span class="skill-chip--test">Networking</span>
+    </div>
+
+    <div class="skills-expander--test" tabindex="0">
+      <div class="skills-expander__handle--test">
+        <span class="skills-expander__chev--test">▾</span>
+        <span>Skills</span>
+      </div>
+      <div class="skill-chips--test">
+        <span class="skill-chip--test">Godot</span>
+        <span class="skill-chip--test">GDScript</span>
+        <span class="skill-chip--test">Networking</span>
+        <span class="skill-chip--test">Game Feel</span>
+      </div>
     </div>
   </div>
 
@@ -30,50 +50,34 @@
 
     <div class="project-actions--test">
       <a class="btn--test" href="/murder-mystery.html">View Project</a>
-      <span class="skill-chip--test">Narrative</span>
-      <span class="skill-chip--test">Level Design</span>
-      <span class="skill-chip--test">Blender</span>
+    </div>
+
+    <div class="skills-expander--test" tabindex="0">
+      <div class="skills-expander__handle--test">
+        <span class="skills-expander__chev--test">▾</span>
+        <span>Skills</span>
+      </div>
+      <div class="skill-chips--test">
+        <span class="skill-chip--test">Narrative</span>
+        <span class="skill-chip--test">Level Design</span>
+        <span class="skill-chip--test">Blender</span>
+      </div>
     </div>
   </div>
 
-  <div class="project-tile--test">
+  <div class="project-tile--test no-skills--test">
     <h3>Pedalogical</h3>
     <p>An AI-powered educational platform for instructors and students.</p>
 
     <div class="project-actions--test">
       <a class="btn--test" href="/pedalogical.html" target="_blank" rel="noopener">View Project</a>
-      <span class="skill-chip--test">.NET</span>
-      <span class="skill-chip--test">Blazor</span>
-      <span class="skill-chip--test">EF Core</span>
-      <span class="skill-chip--test">OpenAI</span>
     </div>
+    <!-- skills footer hidden on this one via .no-skills--test -->
   </div>
 
-  <!-- Add more tiles as needed to see 3x2 behavior -->
-  <div class="project-tile--test">
-    <h3>Portfolio Site</h3>
-    <p>My lightweight, fast, no-framework portfolio with custom CSS.</p>
-
-    <div class="project-actions--test">
-      <a class="btn--test" href="/index.html">View Project</a>
-      <span class="skill-chip--test">HTML</span>
-      <span class="skill-chip--test">CSS</span>
-      <span class="skill-chip--test">Accessibility</span>
-    </div>
-  </div>
-
-  <div class="project-tile--test">
-    <h3>Research Poster</h3>
-    <p>UR2PhD/Murdock conference poster and write-up on AI pedagogy.</p>
-
-    <div class="project-actions--test">
-      <a class="btn--test" href="/poster.html">View Project</a>
-      <span class="skill-chip--test">HCI</span>
-      <span class="skill-chip--test">Data Viz</span>
-      <span class="skill-chip--test">Study Design</span>
-    </div>
-  </div>
+  
 </section>
+
 
 
 <style> 
@@ -82,87 +86,85 @@
 /* TEST: Projects Grid (3-up, compact) + Tile + Button + Skill Chips          */
 /* ========================================================================== */
 
+/* ========================================================================== */
+/* TEST v2: 3-up Grid (roomier), Centered, Longer Cards + Hover Skills Footer  */
+/* ========================================================================== */
+
 .projects-grid--test {
-  padding: 3rem 1rem;
+  padding: 4rem 1.5rem;
   display: grid;
-  gap: 1.25rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 2rem;                                     /* more space between tiles */
+  max-width: 1280px;                              /* centered container width */
+  margin: 0 auto;                                 /* center container */
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;                          /* center tiles within tracks */
 }
 
 /* 2-up on medium screens */
 @media (min-width: 700px) {
   .projects-grid--test {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem;
   }
 }
 
-/* 3-up on large screens (your target) */
-@media (min-width: 1024px) {
+/* 3-up target on large screens */
+@media (min-width: 1100px) {
   .projects-grid--test {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;                                  /* even roomier on large */
   }
 }
 
 .project-tile--test {
+  width: 100%;
+  max-width: 380px;                               /* keeps rows balanced/centered */
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d; /* accent bar (same theme) */
+  border-left: 4px solid #2d2d2d;                 /* accent bar */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 0;                     /* bottom padding handled by footer */
   display: flex;
   flex-direction: column;
-  min-height: 180px; /* slimmer than 300px */
+  min-height: 220px;                              /* a little taller/longer */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-tile--test:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 14px -4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
 .project-tile--test h3 {
   color: #2d2d2d;
-  font-size: 1.1rem;   /* slightly smaller */
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
 .project-tile--test p {
   color: #6a6a6a;
   line-height: 1.6;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.96rem;
+  margin-bottom: 0.25rem;
 }
 
-/* Optional: keep descriptions tidy (2 lines) */
-/* Uncomment if you want tighter rows
-.project-tile--test p {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-*/
-
+/* Actions row with button pinned near bottom (above footer) */
 .project-actions--test {
-  margin-top: auto;             /* pin actions to bottom */
+  margin-top: auto;
   display: flex;
   align-items: center;
-  gap: 0.5rem 0.5rem;
-  flex-wrap: wrap;              /* chips wrap to next line if needed */
 }
 
-/* Test button: same theme as your existing button */
+/* Button (theme-aligned) */
 .btn--test {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: #2d2d2d;
   color: #fff;
-  padding: 0.65rem 1.1rem;
+  padding: 0.7rem 1.15rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
@@ -171,42 +173,87 @@
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.08);
 }
 
-.btn--test:hover {
-  background: #1a1a1a;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.12);
+.btn--test:hover { background: #1a1a1a; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.12); }
+.btn--test:active { transform: translateY(1px); }
+
+/* -------------------------------------------------------------- */
+/* Hover-to-expand skills footer                                  */
+/* -------------------------------------------------------------- */
+
+.skills-expander--test {
+  border-top: 1px solid #e9e9e9;
+  background: #fafafa;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  /* start collapsed */
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 220ms ease, padding 220ms ease, background-color 220ms ease;
 }
 
-.btn--test:active {
-  transform: translateY(1px);
+/* Show a slim "handle" label so users get the hint */
+.skills-expander__handle--test {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #5a5a5a;
+  height: 36px;
 }
 
-/* Skill chips: same color family & rounded geometry, lighter weight than button */
+/* Chevron */
+.skills-expander__chev--test {
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 220ms ease;
+}
+
+/* Expand on card hover or footer focus-within (keyboard/touch-friendly) */
+.project-tile--test:hover .skills-expander--test,
+.project-tile--test:focus-within .skills-expander--test {
+  max-height: 120px;               /* enough room for 1–2 rows of chips */
+  padding: 0.65rem 1rem 0.9rem;
+  background: #f7f7f7;
+}
+
+.project-tile--test:hover .skills-expander__chev--test,
+.project-tile--test:focus-within .skills-expander__chev--test {
+  transform: rotate(180deg);
+}
+
+/* Chip row inside the footer */
+.skill-chips--test {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
 .skill-chip--test {
   display: inline-flex;
   align-items: center;
-  padding: 0.45rem 0.6rem;
+  padding: 0.44rem 0.6rem;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   background: #f8f8f8;
   color: #2d2d2d;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   line-height: 1;
   white-space: nowrap;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.skill-chip--test:hover { border-color: #2d2d2d; box-shadow: 0 2px 4px -2px rgba(0,0,0,0.08); }
 
-.skill-chip--test:hover {
-  border-color: #2d2d2d;
-  box-shadow: 0 2px 4px -2px rgba(0,0,0,0.08);
-}
+/* -------------------------------------------------------------- */
+/* Optional: remove skills entirely by adding .no-skills--test    */
+/* -------------------------------------------------------------- */
 
-/* If you prefer a darker chip to really match the button, swap to this style:
-.skill-chip--test {
-  background: #2d2d2d;
-  color: #fff;
-  border-color: #2d2d2d;
-}
-.skill-chip--test:hover { background: #1a1a1a; }
-*/
+.no-skills--test .skills-expander--test { display: none; }
+
+/* If you want even more breathing room between tiles, bump the grid gap: */
+/* .projects-grid--test { gap: 3rem; } */
+
 
 </style>
