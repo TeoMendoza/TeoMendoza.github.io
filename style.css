@@ -296,25 +296,14 @@ nav a.active {
   --tile-w: 480px;      /* card width */
   --tile-h: 265px;      /* card min-height */
   --tile-gap: 2.5rem;   /* even spacing both directions */
-
-  /* set these to your actual fixed header/footer heights */
-  --header-h: 72px;
-  --footer-h: 0px;
 }
 
-/* Outer container centers the grid in the available space */
+/* Outer container fills leftover space between header & footer and centers */
 .projects-grid {
-  /* Use only the available viewport space after header/footer */
-  height: calc(100dvh - var(--header-h) - var(--footer-h));
-  box-sizing: border-box;
-
-  /* no top/bottom padding here—those were causing the visual offset */
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-
-  display: flex;
-  justify-content: center;   /* horizontal centering of inner grid */
-  align-items: center;       /* vertical centering within available space */
+  flex: 1 1 auto;                 /* consume remaining vertical space */
+  display: grid;                  /* use grid just to center child */
+  place-items: center;            /* center inner grid horizontally & vertically */
+  padding-inline: 1.5rem;         /* keep side padding only */
 }
 
 /* The actual grid layout */
@@ -383,9 +372,7 @@ nav a.active {
   margin: 0.35rem 0;
 }
 
-.project-tile p + p {
-  margin-top: 0.5rem;
-}
+.project-tile p + p { margin-top: 0.5rem; }
 
 /* Button inside tile */
 .project-tile a {
@@ -588,10 +575,9 @@ footer {
   .hero .avatar { width: 112px; height: 112px; }
 }
 
-/* Projects index grid tweak */
 @media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .projects-grid-inner {
+    grid-template-columns: repeat(1, var(--tile-w));
   }
 }
 
