@@ -299,16 +299,18 @@ nav a.active {
 }
 
 .projects-grid {
-  min-height: 100svh;
-  display: grid;
-  justify-content: center;   /* horizontal centering */
-  align-content: center;     /* vertical centering */
+  min-height: 100svh;          /* full viewport height */
+  display: flex;               /* flex wrapper for centering */
+  justify-content: center;     /* center horizontally */
+  align-items: center;         /* center vertically */
   padding: 0 1.5rem;
-  margin: 0 auto;
-  gap: var(--tile-gap);
+}
 
-  /* responsive: 1 → 2 → 3 columns with fixed tile widths */
-  grid-template-columns: repeat(1, var(--tile-w));
+.projects-grid-inner {
+  display: grid;
+  gap: 2.5rem;                 /* even row/col gaps */
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  max-width: 1500px;           /* prevents over-stretch */
 }
 
 @media (min-width: 1000px) {
