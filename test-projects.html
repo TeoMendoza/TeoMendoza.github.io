@@ -1,51 +1,43 @@
 <section class="projects-grid--test">
   <div class="project-tile--test">
-    <h3>3D Brawler</h3>
-    <p class="meta-line--test">
-      <span class="label--test">Description:</span> A chaotic 3D FFA brawler built using SpacetimeDB.
-    </p>
-    <p class="meta-line--test">
-      <span class="label--test">Skills:</span> Unity, C#, SpacetimeDB, Server-authoritative, Netcode
-    </p>
+    <div>
+      <h3>3D Brawler</h3>
+      <p class="meta-line--test"><span class="label--test">Description:</span> A chaotic 3D FFA brawler built using SpacetimeDB.</p>
+      <p class="meta-line--test"><span class="label--test">Skills:</span> Unity, C#, SpacetimeDB, Server-authoritative, Netcode</p>
+    </div>
     <div class="project-actions--test">
       <a class="btn--test" href="/3d-brawler.html">View Project</a>
     </div>
   </div>
 
   <div class="project-tile--test">
-    <h3>Terminal Fighter</h3>
-    <p class="meta-line--test">
-      <span class="label--test">Description:</span> An ability-based 2D fighter with LAN multiplayer.
-    </p>
-    <p class="meta-line--test">
-      <span class="label--test">Skills:</span> Godot, GDScript, Networking, Game feel
-    </p>
+    <div>
+      <h3>Terminal Fighter</h3>
+      <p class="meta-line--test"><span class="label--test">Description:</span> An ability-based 2D fighter with LAN multiplayer.</p>
+      <p class="meta-line--test"><span class="label--test">Skills:</span> Godot, GDScript, Networking, Game feel</p>
+    </div>
     <div class="project-actions--test">
       <a class="btn--test" href="/terminal-fighter.html">View Project</a>
     </div>
   </div>
 
   <div class="project-tile--test">
-    <h3>Family Dinner</h3>
-    <p class="meta-line--test">
-      <span class="label--test">Description:</span> A narrative & character design project with a short gameplay concept for a 3D murder mystery.
-    </p>
-    <p class="meta-line--test">
-      <span class="label--test">Skills:</span> Narrative, Level design, Blender
-    </p>
+    <div>
+      <h3>Family Dinner</h3>
+      <p class="meta-line--test"><span class="label--test">Description:</span> A narrative & character design project with a short gameplay concept for a 3D murder mystery.</p>
+      <p class="meta-line--test"><span class="label--test">Skills:</span> Narrative, Level design, Blender</p>
+    </div>
     <div class="project-actions--test">
       <a class="btn--test" href="/murder-mystery.html">View Project</a>
     </div>
   </div>
 
   <div class="project-tile--test">
-    <h3>Pedalogical</h3>
-    <p class="meta-line--test">
-      <span class="label--test">Description:</span> An AI-powered educational platform for instructors and students.
-    </p>
-    <p class="meta-line--test">
-      <span class="label--test">Skills:</span> .NET, Blazor, EF Core, OpenAI
-    </p>
+    <div>
+      <h3>Pedalogical</h3>
+      <p class="meta-line--test"><span class="label--test">Description:</span> An AI-powered educational platform for instructors and students.</p>
+      <p class="meta-line--test"><span class="label--test">Skills:</span> .NET, Blazor, EF Core, OpenAI</p>
+    </div>
     <div class="project-actions--test">
       <a class="btn--test" href="/pedalogical.html" target="_blank" rel="noopener">View Project</a>
     </div>
@@ -56,53 +48,47 @@
 
 
 
+
 <style> 
-
-/* ========================================================================== */
-/* TEST v3: Centered grid (vh/vw), roomy gaps, inline "Description/Skills"    */
-/* ========================================================================== */
-
 .projects-grid--test {
-  /* Center the entire grid in the viewport */
   min-height: 100vh;
   display: grid;
-  place-content: center;                  /* centers grid block vertically & horizontally */
-  padding: 4rem 1.5rem;
-
-  /* Grid layout */
-  gap: 2.5rem;                            /* more breathing room between tiles */
+  place-content: center;               /* vertical + horizontal centering */
+  gap: 2.5rem;
+  padding: 3rem 1.5rem;
   max-width: 1280px;
   margin: 0 auto;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  justify-items: center;                  /* center tiles within each column track */
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
 }
 
 /* 2-up on medium screens */
 @media (min-width: 700px) {
   .projects-grid--test {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 3-up on large screens (target) */
+/* 3-up on large screens */
 @media (min-width: 1100px) {
   .projects-grid--test {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .project-tile--test {
   width: 100%;
-  max-width: 400px;                       /* a bit longer */
+  max-width: 380px;
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d;         /* accent bar */
+  border-left: 4px solid #2d2d2d;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  padding: 1.25rem 1.25rem 1.25rem;       /* full padding on all sides (button no longer touches bottom) */
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  min-height: 230px;                      /* slightly taller */
+  justify-content: space-between;      /* ensures button always aligned */
+  min-height: 260px;                   /* consistent card height */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -113,16 +99,17 @@
 
 .project-tile--test h3 {
   color: #2d2d2d;
-  font-size: 1.18rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
+/* Meta lines (Description, Skills) */
 .meta-line--test {
   color: #6a6a6a;
   line-height: 1.6;
-  font-size: 0.96rem;
-  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  margin: 0.35rem 0;
 }
 
 .meta-line--test .label--test {
@@ -130,12 +117,11 @@
   font-weight: 600;
 }
 
-/* Place the button in the natural flow, not pinned to bottom */
+/* Button pinned consistently at bottom */
 .project-actions--test {
-  margin-top: 0.9rem;                     /* gentle spacing below meta lines */
+  margin-top: 1.2rem;
 }
 
-/* Button (theme-matched) */
 .btn--test {
   display: inline-flex;
   align-items: center;
