@@ -51,57 +51,65 @@
 
 <style> 
 /* ========================================================================== */
-/* TEST v4.1: perfectly even gaps, centered grid, original card height        */
+/* TEST v4.2: equal row/column gaps, perfectly centered grid, tight cards     */
 /* ========================================================================== */
 
-.projects-grid--test {
-  min-height: 100vh;
-  display: grid;
-  place-content: center;                 /* center whole grid vertically & horizontally */
-  padding: 3rem 1.5rem;
-  max-width: 1200px;                     /* tuned for 3 cols @ ~360px + gaps */
-  margin: 0 auto;
-
-  /* EXACTLY even spacing between tiles */
-  gap: 2rem;                             /* same horizontal & vertical gap */
-  grid-template-columns: repeat(1, 1fr);
-  justify-items: center;                 /* centers tiles within each column */
+:root {
+  --tile-w: 360px;   /* card width */
+  --tile-h: 200px;   /* card min-height (kept short) */
+  --tile-gap: 2rem;  /* SAME spacing both directions */
 }
 
-/* 2-up on medium screens */
+.projects-grid--test {
+  /* center the whole block in the viewport */
+  min-height: 100svh;               /* better viewport units */
+  display: grid;
+  justify-content: center;          /* center horizontally */
+  align-content: center;            /* center vertically */
+  padding: 0 1.5rem;                /* only horizontal padding so centering is exact */
+  margin: 0 auto;
+
+  /* EXACT equal spacing between tiles */
+  gap: var(--tile-gap);
+
+  /* fixed track widths -> no extra intra-track whitespace */
+  grid-template-columns: repeat(1, var(--tile-w));
+}
+
+/* 2 columns */
 @media (min-width: 700px) {
   .projects-grid--test {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, var(--tile-w));
   }
 }
 
-/* 3-up on large screens (fixed 3 across with even gaps) */
+/* 3 columns */
 @media (min-width: 1100px) {
   .projects-grid--test {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, var(--tile-w));
   }
 }
 
 .project-tile--test {
-  width: 100%;
-  max-width: 360px;                      /* back to a shorter, tighter width */
+  width: var(--tile-w);
+  min-height: var(--tile-h);
+  box-sizing: border-box;
+
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-left: 4px solid #2d2d2d;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 
-  /* original-feel height */
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  min-height: 200px;                     /* reverted (shorter) */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-tile--test:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
 .project-tile--test h3 {
@@ -111,7 +119,7 @@
   margin-bottom: 0.6rem;
 }
 
-/* Copy + labels */
+/* Meta lines */
 .meta-line--test {
   color: #6a6a6a;
   line-height: 1.6;
@@ -123,10 +131,8 @@
   font-weight: 600;
 }
 
-/* Consistent button placement:
-   use an inner content wrapper that grows, then button sits after it */
-.project-body--test { flex: 1 1 auto; }
-.project-actions--test { margin-top: 0.9rem; }  /* comfy spacing, not bottom-glued */
+/* Button sits consistently with comfy space (not bottom-glued) */
+.project-actions--test { margin-top: auto; }
 
 .btn--test {
   display: inline-flex;
