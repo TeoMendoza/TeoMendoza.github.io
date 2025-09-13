@@ -500,17 +500,13 @@ nav a.active {
 /* ========================================================================== */
 
 footer {
-    position: sticky;
-    bottom: 0;                 
-    z-index: 1000;
-
-    background: #2d2d2d;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    padding: 2rem;
-
-    margin-top: auto;              
-    padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  position: static;                 /* no sticky/fixed */
+  background: #2d2d2d;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;                 /* pushes footer to bottom on short pages */
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.06); /* optional subtle top shadow */
 }
 
 
