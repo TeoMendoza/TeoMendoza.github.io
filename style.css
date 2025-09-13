@@ -494,6 +494,9 @@ nav a.active {
     background: #f8f9fa;
 }
 
+.contact ul { margin-top: 0; }
+.contact h2 + ul,
+.contact .h3-large + ul { margin-top: 2rem; }
 
 /* ========================================================================== */
 /* 9) Footer                                                                  */
