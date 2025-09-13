@@ -297,24 +297,24 @@ nav a.active {
   --tile-h: 265px;      /* card min-height */
   --tile-gap: 2.5rem;   /* even spacing both directions */
 
-  /* adjust these to your actual header/footer heights */
+  /* set these to your actual fixed header/footer heights */
   --header-h: 72px;
   --footer-h: 0px;
 }
 
 /* Outer container centers the grid in the available space */
 .projects-grid {
+  /* Use only the available viewport space after header/footer */
   height: calc(100dvh - var(--header-h) - var(--footer-h));
   box-sizing: border-box;
 
-  /* push grid below header & above footer */
-  padding: 0 1.5rem;
-  padding-top: var(--header-h);
-  padding-bottom: var(--footer-h);
+  /* no top/bottom padding here—those were causing the visual offset */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 
   display: flex;
-  justify-content: center;   /* horizontal centering */
-  align-items: center;       /* vertical centering */
+  justify-content: center;   /* horizontal centering of inner grid */
+  align-items: center;       /* vertical centering within available space */
 }
 
 /* The actual grid layout */
@@ -324,23 +324,30 @@ nav a.active {
 
   /* Start with 1 column of fixed-width tracks */
   grid-template-columns: repeat(1, var(--tile-w));
+
+  /* Cap total grid width to exactly 3 cols + 2 gaps */
   max-width: calc(3 * var(--tile-w) + 2 * var(--tile-gap));
+  margin: 0;  /* ensure no stray margins shift centering */
 }
 
+/* 2 columns at medium */
 @media (min-width: 1000px) {
   .projects-grid-inner {
     grid-template-columns: repeat(2, var(--tile-w));
   }
 }
 
+/* 3 columns at large (your 3x2 target) */
 @media (min-width: 1500px) {
   .projects-grid-inner {
-    grid-template-columns: repeat(3, var(--tile-w)); /* 3x2 target */
+    grid-template-columns: repeat(3, var(--tile-w));
   }
 }
 
+/* ---------------- Tiles ---------------- */
+
 .project-tile {
-  width: 100%;                  /* fills its grid track */
+  width: 100%;                  /* fills its grid track exactly */
   min-height: var(--tile-h);
   box-sizing: border-box;
 
