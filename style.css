@@ -292,60 +292,63 @@ nav a.active {
 /* 6) Projects Index Grid & Tiles                                             */
 /* ========================================================================== */
 
-:root{
+:root {
   --tile-w: 480px;      /* card width */
   --tile-h: 265px;      /* card min-height */
   --tile-gap: 2.5rem;   /* even spacing both directions */
-  /* Optionally set these to your header/footer heights in your site CSS: */
-  --header-h: 0px;
+
+  /* adjust these to your actual header/footer heights */
+  --header-h: 72px;
   --footer-h: 0px;
 }
 
-.projects-grid{
-  /* Center the whole grid while accounting for header/footer if set */
-  min-height: calc(100svh - var(--header-h) - var(--footer-h));
-  display: flex;
-  justify-content: center;   /* horizontal */
-  align-items: center;       /* vertical */
+/* Outer container centers the grid in the available space */
+.projects-grid {
+  height: calc(100dvh - var(--header-h) - var(--footer-h));
+  box-sizing: border-box;
+
+  /* push grid below header & above footer */
   padding: 0 1.5rem;
+  padding-top: var(--header-h);
+  padding-bottom: var(--footer-h);
+
+  display: flex;
+  justify-content: center;   /* horizontal centering */
+  align-items: center;       /* vertical centering */
 }
 
-/* The actual grid */
-.projects-grid-inner{
+/* The actual grid layout */
+.projects-grid-inner {
   display: grid;
   gap: var(--tile-gap);
+
   /* Start with 1 column of fixed-width tracks */
   grid-template-columns: repeat(1, var(--tile-w));
-  /* Prevent over-stretching */
   max-width: calc(3 * var(--tile-w) + 2 * var(--tile-gap));
 }
 
-/* 2 columns at medium */
-@media (min-width: 1000px){
-  .projects-grid-inner{
+@media (min-width: 1000px) {
+  .projects-grid-inner {
     grid-template-columns: repeat(2, var(--tile-w));
   }
 }
 
-/* 3 columns at large (your 3x2 target) */
-@media (min-width: 1500px){
-  .projects-grid-inner{
-    grid-template-columns: repeat(3, var(--tile-w));
+@media (min-width: 1500px) {
+  .projects-grid-inner {
+    grid-template-columns: repeat(3, var(--tile-w)); /* 3x2 target */
   }
 }
 
-/* ---------------- Tiles ---------------- */
-
-.project-tile{
-  width: 100%;                  /* fill the track exactly */
+.project-tile {
+  width: 100%;                  /* fills its grid track */
   min-height: var(--tile-h);
   box-sizing: border-box;
 
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d;
+  border-left: 4px solid #2d2d2d; /* accent bar */
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 
   padding: 1.75rem;
   display: flex;
@@ -353,31 +356,33 @@ nav a.active {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.project-tile:hover{
+.project-tile:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
   border-left-color: #2d2d2d;
 }
 
-.project-tile h3{
+.project-tile h3 {
   color: #2d2d2d;
   font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
-.project-tile p{
+.project-tile p {
   color: #6a6a6a;
   line-height: 1.7;
   font-size: 1rem;
   margin: 0.35rem 0;
 }
 
-.project-tile p + p{ margin-top: 0.5rem; }
+.project-tile p + p {
+  margin-top: 0.5rem;
+}
 
-/* Button */
-.project-tile a{
-  margin-top: auto;
+/* Button inside tile */
+.project-tile a {
+  margin-top: auto;            /* consistent placement */
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
@@ -390,16 +395,17 @@ nav a.active {
   font-weight: 500;
   line-height: 1;
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.06s ease;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08);
 }
 
-.project-tile a:hover{
+.project-tile a:hover {
   background: #1a1a1a;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.12);
 }
 
-.project-tile a:active{ transform: translateY(1px); }
-
+.project-tile a:active {
+  transform: translateY(1px);
+}
 
 /* ========================================================================== */
 /* 7) About Page Helpers (optional blocks used on About)                      */
