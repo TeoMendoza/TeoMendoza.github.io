@@ -292,49 +292,60 @@ nav a.active {
 /* 6) Projects Index Grid & Tiles                                             */
 /* ========================================================================== */
 
-:root {
-  --tile-w: 480px;   /* card width */
-  --tile-h: 265px;   /* card min-height */
-  --tile-gap: 2.5rem; /* even spacing between rows & columns */
+:root{
+  --tile-w: 480px;      /* card width */
+  --tile-h: 265px;      /* card min-height */
+  --tile-gap: 2.5rem;   /* even spacing both directions */
+  /* Optionally set these to your header/footer heights in your site CSS: */
+  --header-h: 0px;
+  --footer-h: 0px;
 }
 
-.projects-grid {
-  min-height: 100svh;          /* full viewport height */
-  display: flex;               /* flex wrapper for centering */
-  justify-content: center;     /* center horizontally */
-  align-items: center;         /* center vertically */
+.projects-grid{
+  /* Center the whole grid while accounting for header/footer if set */
+  min-height: calc(100svh - var(--header-h) - var(--footer-h));
+  display: flex;
+  justify-content: center;   /* horizontal */
+  align-items: center;       /* vertical */
   padding: 0 1.5rem;
 }
 
-.projects-grid-inner {
+/* The actual grid */
+.projects-grid-inner{
   display: grid;
-  gap: 2.5rem;                 /* even row/col gaps */
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-  max-width: 1500px;           /* prevents over-stretch */
+  gap: var(--tile-gap);
+  /* Start with 1 column of fixed-width tracks */
+  grid-template-columns: repeat(1, var(--tile-w));
+  /* Prevent over-stretching */
+  max-width: calc(3 * var(--tile-w) + 2 * var(--tile-gap));
 }
 
-@media (min-width: 1000px) {
-  .projects-grid {
+/* 2 columns at medium */
+@media (min-width: 1000px){
+  .projects-grid-inner{
     grid-template-columns: repeat(2, var(--tile-w));
   }
 }
 
-@media (min-width: 1500px) {
-  .projects-grid {
+/* 3 columns at large (your 3x2 target) */
+@media (min-width: 1500px){
+  .projects-grid-inner{
     grid-template-columns: repeat(3, var(--tile-w));
   }
 }
 
-.project-tile {
-  width: var(--tile-w);
+/* ---------------- Tiles ---------------- */
+
+.project-tile{
+  width: 100%;                  /* fill the track exactly */
   min-height: var(--tile-h);
   box-sizing: border-box;
 
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d; /* accent bar */
+  border-left: 4px solid #2d2d2d;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 
   padding: 1.75rem;
   display: flex;
@@ -342,33 +353,31 @@ nav a.active {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.project-tile:hover {
+.project-tile:hover{
   transform: translateY(-3px);
-  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
   border-left-color: #2d2d2d;
 }
 
-.project-tile h3 {
+.project-tile h3{
   color: #2d2d2d;
   font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
-.project-tile p {
+.project-tile p{
   color: #6a6a6a;
   line-height: 1.7;
   font-size: 1rem;
   margin: 0.35rem 0;
 }
 
-.project-tile p + p {
-  margin-top: 0.5rem;
-}
+.project-tile p + p{ margin-top: 0.5rem; }
 
-/* Button inside tile */
-.project-tile a {
-  margin-top: auto;            /* consistent placement */
+/* Button */
+.project-tile a{
+  margin-top: auto;
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
@@ -381,17 +390,15 @@ nav a.active {
   font-weight: 500;
   line-height: 1;
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.06s ease;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.08);
 }
 
-.project-tile a:hover {
+.project-tile a:hover{
   background: #1a1a1a;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.12);
 }
 
-.project-tile a:active {
-  transform: translateY(1px);
-}
+.project-tile a:active{ transform: translateY(1px); }
 
 
 /* ========================================================================== */
