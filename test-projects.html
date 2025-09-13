@@ -50,41 +50,30 @@
 
 
 <style> 
-/* ========================================================================== */
-/* TEST v4.2: equal row/column gaps, perfectly centered grid, tight cards     */
-/* ========================================================================== */
-
 :root {
-  --tile-w: 360px;   /* card width */
-  --tile-h: 200px;   /* card min-height (kept short) */
-  --tile-gap: 2rem;  /* SAME spacing both directions */
+  --tile-w: 440px;   /* wider */
+  --tile-h: 245px;   /* taller, same ratio (~1.8:1) */
+  --tile-gap: 2rem;  /* even spacing stays */
 }
 
 .projects-grid--test {
-  /* center the whole block in the viewport */
-  min-height: 100svh;               /* better viewport units */
+  min-height: 100svh;
   display: grid;
-  justify-content: center;          /* center horizontally */
-  align-content: center;            /* center vertically */
-  padding: 0 1.5rem;                /* only horizontal padding so centering is exact */
+  justify-content: center;
+  align-content: center;
+  padding: 0 1.5rem;
   margin: 0 auto;
-
-  /* EXACT equal spacing between tiles */
   gap: var(--tile-gap);
-
-  /* fixed track widths -> no extra intra-track whitespace */
   grid-template-columns: repeat(1, var(--tile-w));
 }
 
-/* 2 columns */
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .projects-grid--test {
     grid-template-columns: repeat(2, var(--tile-w));
   }
 }
 
-/* 3 columns */
-@media (min-width: 1100px) {
+@media (min-width: 1400px) {
   .projects-grid--test {
     grid-template-columns: repeat(3, var(--tile-w));
   }
@@ -94,14 +83,12 @@
   width: var(--tile-w);
   min-height: var(--tile-h);
   box-sizing: border-box;
-
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-left: 4px solid #2d2d2d;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-
-  padding: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -109,29 +96,28 @@
 
 .project-tile--test:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 16px -4px rgba(0,0,0,0.08);
 }
 
 .project-tile--test h3 {
   color: #2d2d2d;
-  font-size: 1.2rem;
+  font-size: 1.3rem;    /* bumped up slightly to fit bigger card */
   font-weight: 600;
   margin-bottom: 0.6rem;
 }
 
-/* Meta lines */
 .meta-line--test {
   color: #6a6a6a;
   line-height: 1.6;
-  font-size: 0.95rem;
-  margin: 0.3rem 0;
+  font-size: 1rem;      /* a little bigger */
+  margin: 0.35rem 0;
 }
+
 .meta-line--test .label--test {
   color: #2d2d2d;
   font-weight: 600;
 }
 
-/* Button sits consistently with comfy space (not bottom-glued) */
 .project-actions--test { margin-top: auto; }
 
 .btn--test {
@@ -140,7 +126,7 @@
   gap: 0.5rem;
   background: #2d2d2d;
   color: #fff;
-  padding: 0.7rem 1.15rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
