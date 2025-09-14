@@ -113,76 +113,79 @@
 
 <style>
   /* layout: arrows on sides, track in the middle */
-  .vc-wrap {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 1.25rem; /* extra top spacing */
-    width: 100%;
-  }
+.vc-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem; /* extra top spacing */
+  width: 100%;
+}
 
-  .vc-viewport {
-    overflow: hidden;
-    border-radius: 12px;
-  }
+.vc-viewport {
+  overflow: hidden; /* clips the track for carousel */
+  /* removed border-radius here */
+  /* no background here */
+}
 
-  .vc-track {
-    display: flex;
-    width: 100%;
-    transition: transform .4s ease;
-    will-change: transform;
-    background: #000; /* prevents flashes between slides */
-  }
+.vc-track {
+  display: flex;
+  width: 100%;
+  transition: transform .4s ease;
+  will-change: transform;
+  background: transparent; /* was black, now transparent */
+}
 
-  .vc-item {
+.vc-item {
   flex: 0 0 100%;
   margin: 0;
   display: flex;
-  flex-direction: column; /* stack video + caption vertically */
+  flex-direction: column; /* stack video on top of caption */
 }
 
 .vc-item video {
   width: 100%;
   display: block;
-  background: #000;
+  background: #000;   /* gives the frame its black bg */
+  border-radius: 12px; /* rounded corners for the video only */
 }
 
-  /* button style: match your .project-card a theme */
-  .vc-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: #2d2d2d;
-    color: #fff;
-    padding: 0.5rem 0.6rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    line-height: 1;
-    user-select: none;
-  }
-  .vc-btn:hover { filter: brightness(1.1); }
-  .vc-btn:active { transform: translateY(1px); }
+/* captions: separate, below the video */
+.vc-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6a6a6a;
+  text-align: left; /* left-aligned as requested */
+}
 
-  .vc-btn[disabled] {
+/* button style: match your .project-card a theme */
+.vc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #2d2d2d;
+  color: #fff;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
+}
+.vc-btn:hover { filter: brightness(1.1); }
+.vc-btn:active { transform: translateY(1px); }
+
+.vc-btn[disabled] {
   visibility: visible;      /* ensure it shows */
   opacity: 0.5;             /* dim it */
   cursor: not-allowed;      /* visual hint */
   filter: none;             /* prevent hover brighten */
-  }
-
-  .vc-btn[disabled]:hover { filter: none; }
-
-  .vc-caption {
-  margin-top: 0.5rem;   /* spacing below the video */
-  font-size: 0.9rem;
-  color: #6a6a6a;
-  text-align: left;     /* left-aligned captions */
 }
+
+.vc-btn[disabled]:hover { filter: none; }
 
 </style>
 
