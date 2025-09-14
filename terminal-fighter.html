@@ -50,35 +50,35 @@
                     <video controls playsinline preload="metadata" poster="/images/NinjaDash.jpg">
                         <source src="/videos/NinjaDash.mp4" type="video/mp4">
                     </video>
-                    <figcaption class="vc-caption">Ninja's dash: slip through bullets to escape or close in for pressure.</figcaption>
+                    <figcaption class="vc-caption">Ninja's dash - slip through bullets to escape or close in for pressure.</figcaption>
                     </figure>
 
                     <figure class="vc-item">
                     <video controls playsinline preload="metadata" poster="/images/NinjaBlock.jpg">
                         <source src="/videos/NinjaBlock.mp4" type="video/mp4">
                     </video>
-                    <figcaption class="vc-caption">Ninja's parry block: reflect bullets for both defense and counterplay.</figcaption>
+                    <figcaption class="vc-caption">Ninja's block - reflect bullets for both defense and counterplay.</figcaption>
                     </figure>
 
                     <figure class="vc-item">
                     <video controls playsinline preload="metadata" poster="/images/NinjaJump.jpg">
                         <source src="/videos/NinjaJump.mp4" type="video/mp4">
                     </video>
-                    <figcaption class="vc-caption">Ninja's double jump: mobility for dodging or striking from above.</figcaption>
+                    <figcaption class="vc-caption">Ninja's double jump - mobility for dodging or striking from above.</figcaption>
                     </figure>
 
                     <figure class="vc-item">
                     <video controls playsinline preload="metadata" poster="/images/GoblinSlam.jpg">
                         <source src="/videos/GoblinSlam.mp4" type="video/mp4">
                     </video>
-                    <figcaption class="vc-caption">Goblin's slam: a stunning knockback to create space or secure damage.</figcaption>
+                    <figcaption class="vc-caption">Goblin's slam - a stunning knockback to create space or secure damage.</figcaption>
                     </figure>
 
                     <figure class="vc-item">
                     <video controls playsinline preload="metadata" poster="/images/GoblinCarbUp.jpg">
                         <source src="/videos/GoblinCarbUp.mp4" type="video/mp4">
                     </video>
-                    <figcaption class="vc-caption">Goblin's carb up: speed and defense buff for safer trades or escapes.</figcaption>
+                    <figcaption class="vc-caption">Goblin's carb up - speed and defense buff for safer trades or escapes.</figcaption>
                     </figure>
                     </div>
                 </div>
@@ -135,12 +135,18 @@
     background: #000; /* prevents flashes between slides */
   }
 
-  .vc-item { flex: 0 0 100%; margin: 0; }
-  .vc-item video {
-    width: 100%;
-    display: block;
-    background: #000;
-  }
+  .vc-item {
+  flex: 0 0 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* stack video + caption vertically */
+}
+
+.vc-item video {
+  width: 100%;
+  display: block;
+  background: #000;
+}
 
   /* button style: match your .project-card a theme */
   .vc-btn {
@@ -172,12 +178,12 @@
   .vc-btn[disabled]:hover { filter: none; }
 
   .vc-caption {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #6a6a6a;
-    text-align: center;
-
+  margin-top: 0.5rem;   /* spacing below the video */
+  font-size: 0.9rem;
+  color: #6a6a6a;
+  text-align: left;     /* left-aligned captions */
 }
+
 </style>
 
 <script>
