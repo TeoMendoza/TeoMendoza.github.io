@@ -26,9 +26,11 @@
         <!-- Title Card -->
         <div class="project-card">
             <h3>Terminal Fighter</h3>
-            <p>Terminal Fighter is a head-to-head fighter with responsive movement, simple combat, ability-driven interactions,
-                and a minimalist arena focused on spacing and timing. It features two unique characters each with their own
-                combat identity and kit (attack, two abilities, passive traits). Watch the videos below to see more!</p>
+            <p>
+                Terminal Fighter is an independently developed head-to-head fighter with responsive movement, simple combat, 
+                ability-driven interactions, and a minimalist arena focused on spacing and timing. It features two unique characters, 
+                each with their own combat identity and kit (basic attack, two abilities, and passive traits). Watch the videos below to see more!
+            </p>
             <a href="https://github.com/TeoMendoza/TerminalFighter" target="_blank" rel="noopener">
                 View on GitHub
             </a>
@@ -45,34 +47,38 @@
                 <div class="vc-viewport">
                     <div class="vc-track">
                     <figure class="vc-item">
-                        <video controls playsinline preload="metadata"
-                            poster="/images/NinjaDash.jpg">
+                    <video controls playsinline preload="metadata" poster="/images/NinjaDash.jpg">
                         <source src="/videos/NinjaDash.mp4" type="video/mp4">
-                        </video>
+                    </video>
+                    <figcaption class="vc-caption">Ninja's dash: slip through bullets to escape or close in for pressure.</figcaption>
                     </figure>
+
                     <figure class="vc-item">
-                        <video controls playsinline preload="metadata"
-                            poster="/images/NinjaBlock.jpg">
+                    <video controls playsinline preload="metadata" poster="/images/NinjaBlock.jpg">
                         <source src="/videos/NinjaBlock.mp4" type="video/mp4">
-                        </video>
+                    </video>
+                    <figcaption class="vc-caption">Ninja's parry block: reflect bullets for both defense and counterplay.</figcaption>
                     </figure>
+
                     <figure class="vc-item">
-                        <video controls playsinline preload="metadata"
-                            poster="/images/NinjaJump.jpg">
+                    <video controls playsinline preload="metadata" poster="/images/NinjaJump.jpg">
                         <source src="/videos/NinjaJump.mp4" type="video/mp4">
-                        </video>
+                    </video>
+                    <figcaption class="vc-caption">Ninja's double jump: mobility for dodging or striking from above.</figcaption>
                     </figure>
+
                     <figure class="vc-item">
-                        <video controls playsinline preload="metadata"
-                            poster="/images/GoblinSlam.jpg">
+                    <video controls playsinline preload="metadata" poster="/images/GoblinSlam.jpg">
                         <source src="/videos/GoblinSlam.mp4" type="video/mp4">
-                        </video>
+                    </video>
+                    <figcaption class="vc-caption">Goblin's slam: a stunning knockback to create space or secure damage.</figcaption>
                     </figure>
+
                     <figure class="vc-item">
-                        <video controls playsinline preload="metadata"
-                            poster="/images/GoblinCarbUp.jpg">
+                    <video controls playsinline preload="metadata" poster="/images/GoblinCarbUp.jpg">
                         <source src="/videos/GoblinCarbUp.mp4" type="video/mp4">
-                        </video>
+                    </video>
+                    <figcaption class="vc-caption">Goblin's carb up: speed and defense buff for safer trades or escapes.</figcaption>
                     </figure>
                     </div>
                 </div>
@@ -86,7 +92,9 @@
         <div class="project-card">
             <h3>Kits & How to Play</h3>
             <p>
-                Full move kits, controls, and setup instructions are documented in the project README.
+                Curious about the full character move sets, controls, or how to get the game running? 
+                Everything is documented in the project README, including ability breakdowns and setup instructions. 
+                It's a quick way to explore the design in more detail or try the game yourself.
             </p>
             <a href="https://github.com/TeoMendoza/TerminalFighter#readme" target="_blank" rel="noopener">
                 Read the README
@@ -163,6 +171,13 @@
 
   .vc-btn[disabled]:hover { filter: none; }
 
+  .vc-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #6a6a6a;
+    text-align: center;
+
+}
 </style>
 
 <script>
