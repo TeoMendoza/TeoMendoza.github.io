@@ -377,17 +377,21 @@ nav a.active {
 
 /* Button inside tile */
 .project-tile a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #2d2d2d;
-    color: white;
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 1.5rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2d2d2d;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.3s ease;
+  margin-top: auto;           /* keep button pinned to bottom */
+  align-self: flex-start;     /* left align in the tile */
+  flex: 0 0 auto;             /* prevent stretching */
+  width: auto;                /* shrink to fit */
 }
 
 .project-tile a:hover {
