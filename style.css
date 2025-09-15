@@ -178,146 +178,101 @@ nav a.active {
 
 
 /* ========================================================================== */
-/* 5) Sections: Projects / Cards                                              */
+/* 5) Project Cards                                                           */
 /* ========================================================================== */
 
-/* Projects Section */
-.projects {
-    padding: 4rem 1.5rem;
-}
-
-.project-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.project-category {
-    background: #ffffff;
-    padding: 2.5rem;
-    border-radius: 16px;
-    text-align: center;
-    text-decoration: none;
-    color: #4a4a4a;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    margin: 0 1rem;
-}
-
-.project-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
-    border-color: #2d2d2d;
-}
-
-/* Project Cards */
 .project-card {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 1.5rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #2d2d2d;
-    transition: transform 0.3s ease;
-    padding-left: 2rem;
-    padding-right: 2rem;
+  position: relative;              /* for accent bar */
+  background: #ffffff;
+  padding: 2rem;
+  padding-left: 2rem;              /* keep your card spacing */
+  padding-right: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  margin: 1.5rem auto;
+  max-width: 800px;
+  overflow: hidden;                /* lets accent bar respect rounded corners */
 }
 
+.project-card::before {
+  /* shared accent bar */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #2d2d2d;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
 
 .project-card:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .project-card h3 {
-    color: #2d2d2d;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .project-card p {
-    font-weight: 400;
-    color: #6a6a6a;
-    line-height: 1.7;
+  font-weight: 400;
+  color: #6a6a6a;
+  line-height: 1.7;
 }
 
-/* .project-card a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #2d2d2d;
-    color: white;
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 1.5rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.project-card a:hover {
-    background: #1a1a1a;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-} */
-
-.project-card p + p {
-  margin-top: 1rem;
-}
+.project-card p + p { margin-top: 1rem; }
 
 .project-card ul {
-    list-style: none;           /* remove default bullets */
-    margin: 0.5em 0 1em 1.5em;  /* add indentation + spacing */
-    padding: 0;
+  list-style: none;
+  margin: 0.5em 0 1em 1.5em;
+  padding: 0;
 }
 
 .project-card li {
-    color: #6a6a6a;             /* match surrounding text color */
-    font-weight: 400;           /* normal text weight */
-    line-height: 1.6;           /* breathing room between lines */
-    margin: 0.25em 0;           /* vertical spacing between items */
-    position: relative;
+  color: #6a6a6a;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0.25em 0;
+  position: relative;
 }
 
 .project-card li::before {
-    content: "- ";              /* subtle dash as marker */
-    position: absolute;
-    left: -1.2em;               /* aligns dash to the left of text */
-    color: #6a6a6a;                /* softer than main text */
+  content: "- ";
+  position: absolute;
+  left: -1.2em;
+  color: #6a6a6a;
 }
-
 
 /* ========================================================================== */
 /* 6) Projects Index Grid & Tiles                                             */
 /* ========================================================================== */
 
 :root {
-  --tile-w: 460px;      /* card width */
-  --tile-h: 265px;      /* card min-height */
-  --tile-gap: 2rem;   /* even spacing both directions */
+  --tile-w: 460px;    /* card width */
+  --tile-h: 265px;    /* card min-height */
+  --tile-gap: 2rem;   /* spacing */
 }
 
-/* Outer container fills leftover space between header & footer and centers */
+/* Outer container centers inner grid */
 .projects-grid {
-  flex: 1 1 auto;                 /* consume remaining vertical space */
-  display: grid;                  /* use grid just to center child */
-  place-items: center;            /* center inner grid horizontally & vertically */
-  padding-inline: 1.5rem;         /* keep side padding only */
+  flex: 1 1 auto;
+  display: grid;
+  place-items: center;
+  padding-inline: 1.5rem;
 }
 
 /* The actual grid layout */
 .projects-grid-inner {
   display: grid;
   gap: var(--tile-gap);
-
-  /* Start with 1 column of fixed-width tracks */
   grid-template-columns: repeat(1, var(--tile-w));
-
-  /* Cap total grid width to exactly 3 cols + 2 gaps */
   max-width: calc(3 * var(--tile-w) + 2 * var(--tile-gap));
-  margin: 0;  /* ensure no stray margins shift centering */
+  margin: 0;
 }
 
 /* 2 columns at medium */
@@ -327,7 +282,7 @@ nav a.active {
   }
 }
 
-/* 3 columns at large (your 3x2 target) */
+/* 3 columns at large */
 @media (min-width: 1500px) {
   .projects-grid-inner {
     grid-template-columns: repeat(3, var(--tile-w));
@@ -337,13 +292,12 @@ nav a.active {
 /* ---------------- Tiles ---------------- */
 
 .project-tile {
-  width: 100%;                  /* fills its grid track exactly */
+  position: relative;              /* for accent bar */
+  width: 100%;
   min-height: var(--tile-h);
   box-sizing: border-box;
 
   background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-left: 4px solid #2d2d2d; /* accent bar */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 
@@ -351,12 +305,25 @@ nav a.active {
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;                /* lets accent bar respect rounded corners */
+}
+
+.project-tile::before {
+  /* shared accent bar (same as card) */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #2d2d2d;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
 }
 
 .project-tile:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
-  border-left-color: #2d2d2d;
 }
 
 .project-tile h3 {
@@ -375,9 +342,10 @@ nav a.active {
 
 .project-tile p + p { margin-top: 0.5rem; }
 
-/* ========================================================= */
-/* Shared button styles for card + tile                      */
-/* ========================================================= */
+/* ========================================================================== */
+/* Shared button styles for card + tile                                       */
+/* ========================================================================== */
+
 .project-card a,
 .project-tile a {
   display: inline-flex;
@@ -404,18 +372,16 @@ nav a.active {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* ========================================================= */
-/* Context-specific tweaks                                   */
-/* ========================================================= */
+/* Context-specific placement (kept separate) */
 .project-card a {
-  margin-top: 1.5rem;       /* spacing inside cards */
+  margin-top: 1.5rem;             /* spacing inside cards */
 }
 
 .project-tile a {
-  margin-top: auto;         /* pin to bottom in flex column */
-  align-self: flex-start;   /* left align in the tile */
-  flex: 0 0 auto;           /* prevent stretching */
-  width: auto;              /* shrink to fit */
+  margin-top: auto;                /* pin to bottom in flex column */
+  align-self: flex-start;          /* left align in the tile */
+  flex: 0 0 auto;                  /* prevent stretch */
+  width: auto;                     /* shrink to fit */
 }
 
 
