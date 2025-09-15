@@ -201,10 +201,13 @@ nav a.active {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 6px;                
+
+  width: 4px;                 /* keep it slim */
   background: #2d2d2d;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+
+  /* force the bar itself to round fully into the parent corner */
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
 }
 
 .project-card:hover {
@@ -313,10 +316,13 @@ nav a.active {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 6px;
+
+  width: 4px;                 /* keep it slim */
   background: #2d2d2d;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+
+  /* force the bar itself to round fully into the parent corner */
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
 }
 
 .project-tile:hover {
