@@ -293,7 +293,7 @@ nav a.active {
 /* ========================================================================== */
 
 :root {
-  --tile-w: 470px;      /* card width */
+  --tile-w: 460px;      /* card width */
   --tile-h: 265px;      /* card min-height */
   --tile-gap: 2rem;   /* even spacing both directions */
 }
