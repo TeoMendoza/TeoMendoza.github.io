@@ -143,7 +143,7 @@ nav a.active {
 
 .inline-link {
   color: #4a4a4a;         /* accent color */
-  font-weight: 450;        /* a bit bolder */
+  font-weight: 500;        /* a bit bolder */
   text-decoration: none;   /* no underline by default */
   font-size: inherit;      /* same size as surrounding text */
 }
@@ -239,6 +239,7 @@ nav a.active {
 }
 
 .project-card p {
+    font-weight: 400;
     color: #6a6a6a;
     line-height: 1.7;
 }
