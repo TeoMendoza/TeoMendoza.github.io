@@ -377,6 +377,7 @@ nav a.active {
 
 /* Button inside tile */
 .project-tile a {
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
