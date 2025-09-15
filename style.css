@@ -244,7 +244,7 @@ nav a.active {
     line-height: 1.7;
 }
 
-.project-card a {
+/* .project-card a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -261,7 +261,7 @@ nav a.active {
 .project-card a:hover {
     background: #1a1a1a;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .project-card p + p {
   margin-top: 1rem;
@@ -375,7 +375,10 @@ nav a.active {
 
 .project-tile p + p { margin-top: 0.5rem; }
 
-/* Button inside tile — match card size exactly */
+/* ========================================================= */
+/* Shared button styles for card + tile                      */
+/* ========================================================= */
+.project-card a,
 .project-tile a {
   display: inline-flex;
   align-items: center;
@@ -387,30 +390,35 @@ nav a.active {
   text-decoration: none;
   font-weight: 500;
 
-  /* force same text metrics & vertical size as card */
-  font-size: 1rem;        /* same as body / card */
-  line-height: 1.2;       /* typical “normal” */
-  padding-block: 0.8rem;  /* same vertical padding */
-  padding-inline: 1.8rem; /* same horizontal padding */
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0.8rem 1.8rem;
   box-sizing: border-box;
 
   transition: all 0.3s ease;
-
-  /* keep tile placement/behavior */
-  margin-top: auto;
-  align-self: flex-start;
-  flex: 0 0 auto;
-  width: auto;
 }
 
+.project-card a:hover,
 .project-tile a:hover {
   background: #1a1a1a;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.project-tile a:active {
-  transform: translateY(1px);
+/* ========================================================= */
+/* Context-specific tweaks                                   */
+/* ========================================================= */
+.project-card a {
+  margin-top: 1.5rem;       /* spacing inside cards */
 }
+
+.project-tile a {
+  margin-top: auto;         /* pin to bottom in flex column */
+  align-self: flex-start;   /* left align in the tile */
+  flex: 0 0 auto;           /* prevent stretching */
+  width: auto;              /* shrink to fit */
+}
+
+
 
 /* ========================================================================== */
 /* 7) About Page Helpers (optional blocks used on About)                      */
