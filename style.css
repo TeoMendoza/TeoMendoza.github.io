@@ -375,24 +375,32 @@ nav a.active {
 
 .project-tile p + p { margin-top: 0.5rem; }
 
-/* Button inside tile */
+/* Button inside tile — match card size exactly */
 .project-tile a {
-  min-height: 44px;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+
   background: #2d2d2d;
   color: #fff;
-  padding: 0.8rem 1.8rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  line-height: 1;
+
+  /* force same text metrics & vertical size as card */
+  font-size: 1rem;        /* same as body / card */
+  line-height: 1.2;       /* typical “normal” */
+  padding-block: 0.8rem;  /* same vertical padding */
+  padding-inline: 1.8rem; /* same horizontal padding */
+  box-sizing: border-box;
+
   transition: all 0.3s ease;
-  margin-top: auto;           /* keep button pinned to bottom */
-  align-self: flex-start;     /* left align in the tile */
-  flex: 0 0 auto;             /* prevent stretching */
-  width: auto;                /* shrink to fit */
+
+  /* keep tile placement/behavior */
+  margin-top: auto;
+  align-self: flex-start;
+  flex: 0 0 auto;
+  width: auto;
 }
 
 .project-tile a:hover {
