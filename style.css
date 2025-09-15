@@ -377,25 +377,22 @@ nav a.active {
 
 /* Button inside tile */
 .project-tile a {
-  margin-top: auto;            /* consistent placement */
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #2d2d2d;
-  color: #fff;
-  padding: 0.8rem 1.3rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  line-height: 1;
-  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.06s ease;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2d2d2d;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .project-tile a:hover {
   background: #1a1a1a;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .project-tile a:active {
