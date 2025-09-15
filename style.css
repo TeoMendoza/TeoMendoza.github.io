@@ -196,16 +196,15 @@ nav a.active {
 }
 
 .project-card::before {
-  /* shared accent bar */
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 4px;
+  width: 6px;                
   background: #2d2d2d;
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .project-card:hover {
@@ -309,16 +308,15 @@ nav a.active {
 }
 
 .project-tile::before {
-  /* shared accent bar (same as card) */
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 4px;
+  width: 6px;
   background: #2d2d2d;
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .project-tile:hover {
