@@ -23,46 +23,62 @@
         <div class="project-card">
             <h3>Clash Royale Evolutions</h3>
             <p>
-                An in depth game design analysis of Clash Royale's Evolution mechanic: why it was introduced,
-                how it refreshes gameplay and deck diversity, its effects on progression/monetization, and key
-                tradeoffs. Includes a focused deep dive on <strong>Evo Snowball</strong> and its meta impact.
+                A in depth game design analysis of Clash Royale's Evolution mechanic: why it was introduced, how it reinvigorates gameplay and deck variety, its impact on progression and monetization, and the tradeoffs it brings. The study also takes a closer look at Evolution Snowball and its influence on the meta.
             </p>
         </div>
 
         <div class="project-card" id="introduction">
             <h3>1. Introduction</h3>
-            <p><strong>What is Clash Royale?</strong> A real time 1v1 tower defense card game. Players build an eight card deck and deploy four at a time, cycling as they play. Defend two side towers and a main tower while destroying the opponent's. Matches are timed, the winner destroys more towers or the main tower (sudden death if tied).</p>
-            <p><strong>What are Evolutions?</strong> Cards keep their core identity, and Evolutions add a cyclical transformation. Example: play Knight twice, on the third deployment he becomes the evolved form with new abilities, then reverts. Evolutions preserve theme while layering fresh mechanics.</p>
-            <p><strong>Why they matter:</strong> Faster/safer than new cards (built on known foundations), add novelty and skill expression for players, and create a progression layer via evolution shards that sustains engagement and monetization.</p>
+            <p><strong>What is Clash Royale?</strong> Clash Royale is a real time 1v1 tower defense card game where players build an 8 card deck and deploy 4 cards at a time, cycling as they play. The goal is to defend your own two side towers and central King tower while destroying your opponent's. Matches are timed, and the winner is the player who takes more towers or the King tower, with sudden death rules if tied.</p>
+            
+            <p><strong>What are Evolutions?</strong> Evolutions give existing cards cyclical transformations while keeping their core identity intact. For example, after playing the Knight twice, his third deployment becomes the evolved form with new abilities before reverting back. This preserves the card's theme while layering in fresh mechanics that expand how it can be played.</p>
+            
+            <p><strong>Why do they matter?</strong> Evolutions are faster and safer to design than brand new cards since they build on known foundations, but they still inject novelty and excitement for players. They expand skill expression, as players must adapt to using their own evolutions effectively and countering opponents'. They also introduce a new progression system via “evolution shards,” which sustains engagement and drives monetization.</p>
         </div>
 
+
         <div class="project-card" id="systemic-layer">
-            <h3>2. Evolutions - The Systemic Layer</h3>
-            <p><strong>Problem solved:</strong> After nine years, some cards felt stale/underpowered. Stat tweaks risk destabilizing the meta. Evolutions refresh older cards with new mechanics at lower dev cost and give less technical players powerful tools while preserving high skill counterplay.</p>
-            <p><strong>Design purpose:</strong> Refresh gameplay through new behaviors without changing core systems, increase deck diversity (decks feel like 10 cards not 8), add progression/monetization through gated unlocks.</p>
+            <h3>2. Evolutions</h3>
+            <p><strong>Problem solved:</strong> After nearly a decade, many cards had grown stale or underpowered. Simple stat buffs risked destabilizing the meta, while new cards carried higher development costs. Evolutions offered a safer path, refreshing old cards with new mechanics that revive their relevance, keep gameplay novel, and expand accessibility for casual players while preserving high skill gameplay.</p>
+            
+            <p><strong>Design purpose:</strong> Evolutions refresh gameplay through new behaviors without altering the core systems, broaden deck diversity by making decks feel like 10 cards instead of 8, and add a progression layer through gated unlocks that sustain engagement and monetization.</p>
         </div>
 
         <div class="project-card" id="broad-impact">
             <h3>3. Broad Impact of Evolutions</h3>
-            <p><strong>Positives:</strong> Meta refresh with new interactions and outplay windows, underused cards revived via tailored evolutions.</p>
-            <p><strong>Challenges:</strong> Balance spikes at launch (sometimes intentionally strong), power creep disadvantaging F2P players while they grind shards, complexity creep as players must learn both base and evolved behaviors (partly mitigated by progression gating).</p>
+            <p><strong>Positives:</strong> Evolutions refresh the meta with new interactions and outplay opportunities, making matches feel more dynamic. They also revive underused cards by tailoring evolutions to their themes, encouraging diverse deck experimentation.</p>
+            
+            <p><strong>Challenges:</strong> Launch balance spikes are common, sometimes intentionally strong to drive excitement and spending, leading to short term frustration until counters or nerfs emerge. Evolutions also introduce power creep, leaving free to play players at a disadvantage while grinding shards. Finally, they add complexity, as players must learn both base and evolved behaviors. Progression gating helps pace this, but the learning curve remains steeper for newer players.</p>
         </div>
 
+
         <div class="project-card" id="snowball">
-            <h3>4. Deep Dive - Snowball</h3>
-            <p><strong>Base card:</strong> Low cost versatile spell prized for knockback, good for disrupting pushes (defense) and clearing space (offense). Weaknesses: low damage and no interrupt for charge up attacks.</p>
-            <p><strong>Evolution mechanic:</strong> Expanded area that “swallows” troops and launches them farther back while still applying slow and damage.</p>
-            <p><strong>Behaviors:</strong> Offense: Excellent with win conditions (e.g., Goblin Drill), launching defenders away to secure tower damage. Defense: Throws units farther from towers, delaying attacks more dramatically than base Snowball.</p>
-            <p><strong>Design intent:</strong> Strengthen Snowball and encourage counterplay via buildings (not swallowable), elevating timing and anticipation.</p>
-            <p><strong>Meta impact:</strong> Drill decks surged, defenders must stagger units or layer multiple cards to withstand displacement, often at higher elixir cost. Drill (4) + Evo Snowball (2) = 6 elixir commitment, failed pushes invite punishing counterattacks.</p>
-            <p><strong>Drawbacks:</strong> Defensive awkwardness: swallowing can remove a unit from tower range, preventing follow-up damage and letting it strike after slow ends (sometimes worse than base Snowball). Decision pressure: its offensive value creates hesitancy to spend it on defense, leading to costly misreads.</p>
-            <p><strong>Evaluation & lesson:</strong> Successfully revitalized the card and became a staple in specific archetypes. Also showed how emergent synergies (e.g., Drill) can create skill tier dependent frustration. Live service teams must anticipate unintended combinations and iterate quickly so novelty doesn't become oppression.</p>
+            <h3>4. Deep Dive - Evolution Snowball</h3>
+            
+            <p><strong>Base card:</strong> Snowball is a low cost, versatile spell valued for its knockback. It disrupts pushes on defense and clears space on offense, but its low damage and inability to reset charge up attacks limit its utility.</p>
+            
+            <p><strong>Evolution mechanic:</strong> The evolved version expands Snowball's area, “swallowing” troops and launching them farther back while still applying slow and damage.</p>
+            
+            <p><strong>Behaviors:</strong> On offense, Evo Snowball pairs especially well with win conditions like Goblin Drill, launching defenders away to secure tower damage. On defense, it throws units farther from towers, delaying attacks more dramatically than the base spell.</p>
+            
+            <p><strong>Design intent:</strong> Strengthen Snowball's role while encouraging counterplay through buildings (which cannot be swallowed), raising both timing and anticipation as skill tests.</p>
+            
+            <p><strong>Meta impact:</strong> Goblin Drill decks surged, forcing defenders to time and position troops carefully against Evo Snowball, often at a higher elixir cost. The Drill (4) + Evo Snowball (2) package is potent but risky, an overcommitment opens players up to counterpushes.</p>
+            
+            <p><strong>Drawbacks:</strong> Evo Snowball can backfire defensively by removing a unit from tower range, letting it survive and strike once the slow ends. Its strong offensive value also pressures players into saving it, sometimes causing costly defensive misreads.</p>
+            
+            <p><strong>Evaluation & lesson:</strong> Evo Snowball revitalized the card and became a staple in certain archetypes, but also exposed how emergent synergies (like Drill) can create frustration at specific skill tiers. The lesson: development teams must anticipate unintended combinations and iterate quickly so that novelty enhances gameplay without turning oppressive.</p>
         </div>
+
+
 
         <div class="project-card" id="reflection">
             <h3>5. Reflection</h3>
-            <p>Evolutions deliver freshness through familiarity: extending existing cards to open new strategic space without destabilizing the core. They revive old cards, refresh the meta, and add durable progression, while underscoring the challenge of balancing across skill tiers. My design takeaway: the most elegant solutions often extend proven foundations instead of inventing entirely new systems.</p>
+            <p>Evolutions are a textbook case of freshness through familiarity. By building on existing cards, they deliver novelty without destabilizing Clash Royale's core. They keep old cards relevant, refresh the meta, and create durable progression, all while highlighting the difficulty of balancing new content across different skill levels.</p>
+            
+            <p>My design takeaway: elegant solutions don't always mean inventing new systems. Often the best approach is to extend proven foundations in ways that feel natural, yet open up new strategic space.</p>
         </div>
+
 
     </section>
 
