@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash | Teo Mendoza</title>
+    <link rel="stylesheet" href="../style.css?v=0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1><a href="../index.html">Teo Mendoza</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="projects">
+
+        <div class="project-card">
+            <h3>Bash</h3>
+            <p><em>A fast-paced FFA shooter built around pure combat and high skill expression.</em></p>
+            <p>
+                Bash is a completed fast-paced free-for-all shooter centered on pure combat, quick respawns, and constant player interaction.
+                The core design goal was to turn the classic lobby mini-game into the full experience, stripping away downtime and focusing entirely on mechanical skill, positioning, pressure, and adaptation.
+                Every major system, from combat flow to character design, supports a tight gameplay loop built for nonstop action and expressive play.
+            </p>
+            <a href="https://github.com/TeoMendoza/3D-Brawler">View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Gameplay / Progress Videos</h3>
+            <p>Development timeline of Bash, from early systems to the final completed gameplay showcase.</p>
+
+            <div class="vc-wrap" id="tf-carousel">
+                <button class="vc-btn vc-prev" aria-label="Previous">←</button>
+
+                <div class="vc-viewport">
+                    <div class="vc-track">
+
+                        <figure class="vc-item">
+                            <div class="vc-video-frame">
+                                <iframe
+                                    src="https://www.youtube.com/embed/QNLyc83kIVk" title="Bash Final Gameplay Showcase" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <figcaption class="vc-caption"><strong>Milestone 6 -</strong> Final gameplay showcase featuring a complete, polished end to end experience with all core systems integrated</figcaption>
+                        </figure>
+
+                        <figure class="vc-item">
+                            <video controls playsinline preload="metadata" poster="/images/Bash/Milestone5.jpg">
+                                <source src="/videos/Bash/Milestone5.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="vc-caption"><strong>Milestone 5 -</strong> First complete gameplay slice featuring a full character kit and functional game loop, marking the first true end to end playable experience</figcaption>
+                        </figure>
+
+                        <figure class="vc-item">
+                            <video controls playsinline preload="metadata" poster="/images/Bash/Milestone4.jpg">
+                                <source src="/videos/Bash/Milestone4.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="vc-caption"><strong>Milestone 4 -</strong> Generalized physics engine supporting arbitrary convex shapes, using GJK & EPA for collision detection and resolution</figcaption>
+                        </figure>
+
+                        <figure class="vc-item">
+                            <video controls playsinline preload="metadata" poster="/images/Bash/Milestone3.jpg">
+                                <source src="/videos/Bash/Milestone3.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="vc-caption"><strong>Milestone 3 -</strong> Basic physics engine supporting primitive shapes with collision detection and response</figcaption>
+                        </figure>
+
+                        <figure class="vc-item">
+                            <video controls playsinline preload="metadata" poster="/images/Bash/Milestone2.jpg">
+                                <source src="/videos/Bash/Milestone2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="vc-caption"><strong>Milestone 2 -</strong> Core multiplayer setup with client synchronization, deployed to SpacetimeDB Maincloud</figcaption>
+                        </figure>
+
+                        <figure class="vc-item">
+                            <video controls playsinline preload="metadata" poster="/images/Bash/Tutorial.jpg">
+                                <source src="/videos/Bash/Tutorial.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="vc-caption"><strong>Milestone 1 -</strong> Simple 2D multiplayer Agar.io-style game built to learn SpacetimeDB and its workflow</figcaption>
+                        </figure>
+
+                    </div>
+                </div>
+
+                <button class="vc-btn vc-next" aria-label="Next">→</button>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Learn More</h3>
+            <p>
+                Full documentation covering character design, combat systems, and core gameplay decisions is available in the repository.
+                The README provides an overview, with deeper breakdowns of how each system supports the overall combat-focused design.
+            </p>
+            <a href="https://github.com/TeoMendoza/3d-brawler#readme">Read the README</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2025 Teo Mendoza</p>
+    </footer>
+
+</body>
+</html>
+
+<style>
+.vc-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.vc-viewport {
+  overflow: hidden;
+}
+
+.vc-track {
+  display: flex;
+  width: 100%;
+  transition: transform .4s ease;
+  will-change: transform;
+  background: transparent;
+}
+
+.vc-item {
+  flex: 0 0 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.vc-item video,
+.vc-video-frame {
+  width: 100%;
+  display: block;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.vc-video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.vc-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.vc-item video {
+  width: 100%;
+  display: block;
+  background: #000;
+  border-radius: 12px;
+}
+
+.vc-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6a6a6a;
+  text-align: left;
+}
+
+.vc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #2d2d2d;
+  color: #fff;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
+}
+
+.vc-btn:hover { filter: brightness(1.1); }
+.vc-btn:active { transform: translateY(1px); }
+
+.vc-btn[disabled] {
+  visibility: visible;
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.vc-btn[disabled]:hover { filter: none; }
+</style>
+
+<script>
+(function(){
+    const root = document.getElementById('tf-carousel');
+    const track = root.querySelector('.vc-track');
+    const slides = Array.from(track.children);
+    const prev = root.querySelector('.vc-prev');
+    const next = root.querySelector('.vc-next');
+    const htmlVideos = slides
+        .map(slide => slide.querySelector('video'))
+        .filter(video => video !== null);
+
+    let CurrentIndex = 0;
+
+    function PauseAll() {
+        htmlVideos.forEach(video => {
+            try { video.pause(); } catch (Error) {}
+        });
+    }
+
+    function UpdateArrows() {
+        prev.disabled = (CurrentIndex === 0);
+        next.disabled = (CurrentIndex === slides.length - 1);
+    }
+
+    function Render() {
+        track.style.transform = `translateX(-${CurrentIndex * 100}%)`;
+        UpdateArrows();
+    }
+
+    prev.addEventListener('click', () => {
+        if (CurrentIndex > 0) {
+            PauseAll();
+            CurrentIndex -= 1;
+            Render();
+        }
+    });
+
+    next.addEventListener('click', () => {
+        if (CurrentIndex < slides.length - 1) {
+            PauseAll();
+            CurrentIndex += 1;
+            Render();
+        }
+    });
+
+    window.addEventListener('resize', Render, { passive: true });
+    Render();
+})();
+</script>
