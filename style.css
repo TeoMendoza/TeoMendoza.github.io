@@ -115,8 +115,8 @@ nav a.active {
 }
 
 .hero .about-me {
-    margin-top: 2rem;  /* Reduced from 3rem */
-    padding: 1.5rem;   /* Slightly reduced padding */
+    margin-top: 2rem;
+    padding: 1.5rem;
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -142,14 +142,22 @@ nav a.active {
 }
 
 .inline-link {
-  color: #4a4a4a;         /* accent color */
-  font-weight: 500;        /* a bit bolder */
-  text-decoration: none;   /* no underline by default */
-  font-size: inherit;      /* same size as surrounding text */
+  color: #4a4a4a;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: inherit;
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  display: inline !important;
+  box-shadow: none !important;
 }
 
 .inline-link:hover {
   text-decoration: underline;
+  background: none !important;
+  box-shadow: none !important;
 }
 
 .inline-link:visited {
@@ -160,12 +168,11 @@ nav a.active {
 /* 4) Buttons (Base styles shared across components)                          */
 /* ========================================================================== */
 
-/* Base button look (matches project-card buttons) */
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #2d2d2d;            /* or var(--accent) if you added themes */
+    background: #2d2d2d;
     color: #fff;
     padding: 0.8rem 1.4rem;
     border-radius: 8px;
@@ -191,8 +198,6 @@ nav a.active {
   transition: transform 0.3s ease;
   margin: 1.5rem auto;
   max-width: 800px;
-
-  /* Accent bar that follows rounded corners */
   border-left: 4px solid #2d2d2d;
 }
 
@@ -246,7 +251,6 @@ nav a.active {
   --tile-gap: 2rem;
 }
 
-/* Outer container centers inner grid */
 .projects-grid {
   flex: 1 1 auto;
   display: grid;
@@ -254,7 +258,6 @@ nav a.active {
   padding-inline: 1.5rem;
 }
 
-/* The actual grid layout */
 .projects-grid-inner {
   display: grid;
   gap: var(--tile-gap);
@@ -263,14 +266,12 @@ nav a.active {
   margin: 0;
 }
 
-/* 2 columns at medium */
 @media (min-width: 1000px) {
   .projects-grid-inner {
     grid-template-columns: repeat(2, var(--tile-w));
   }
 }
 
-/* 3 columns at large */
 @media (min-width: 1500px) {
   .projects-grid-inner {
     grid-template-columns: repeat(3, var(--tile-w));
@@ -283,17 +284,13 @@ nav a.active {
   width: 100%;
   min-height: var(--tile-h);
   box-sizing: border-box;
-
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-  /* Accent bar that follows rounded corners (same as card) */
   border-left: 4px solid #2d2d2d;
 }
 
@@ -322,38 +319,35 @@ nav a.active {
 /* Shared button styles for card + tile                                       */
 /* ========================================================================== */
 
-.project-card a,
-.project-tile a {
+.project-card a:not(.inline-link),
+.project-tile a:not(.inline-link) {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-
   background: #2d2d2d;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-
   font-size: 1rem;
   line-height: 1.2;
   padding: 0.8rem 1.8rem;
   box-sizing: border-box;
-
   transition: all 0.3s ease;
 }
 
-.project-card a:hover,
-.project-tile a:hover {
+.project-card a:not(.inline-link):hover,
+.project-tile a:not(.inline-link):hover {
   background: #1a1a1a;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* Context-specific placement */
-.project-card a {
+.project-card a:not(.inline-link) {
   margin-top: 1.5rem;
 }
 
-.project-tile a {
+.project-tile a:not(.inline-link) {
   margin-top: auto;
   align-self: flex-start;
   flex: 0 0 auto;
@@ -361,10 +355,9 @@ nav a.active {
 }
 
 /* ========================================================================== */
-/* 7) About Page Helpers (optional blocks used on About)                      */
+/* 7) About Page Helpers                                                      */
 /* ========================================================================== */
 
-/* Smaller tile grid for interests (reuses .project-tile styling) */
 .tiles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -372,7 +365,6 @@ nav a.active {
   margin-top: 1rem;
 }
 
-/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -399,7 +391,6 @@ nav a.active {
   padding: .6rem .8rem .8rem;
 }
 
-/* Placeholder text style */
 .placeholder {
   color: #888;
   font-style: italic;
@@ -418,7 +409,6 @@ nav a.active {
     background: #ffffff;
     border-radius: 16px;
 }
-
 
 .contact h2 {
     color: #2d2d2d;
@@ -462,13 +452,13 @@ nav a.active {
 /* ========================================================================== */
 
 footer {
-  position: static;                 /* no sticky/fixed */
+  position: static;
   background: #2d2d2d;
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
   padding: 2rem;
-  margin-top: auto;                 /* pushes footer to bottom on short pages */
-  box-shadow: 0 -2px 12px rgba(0,0,0,0.06); /* optional subtle top shadow */
+  margin-top: auto;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
 }
 
 
@@ -476,7 +466,6 @@ footer {
 /* 10) Interactive Effects: Hover Jump & Focus                                */
 /* ========================================================================== */
 
-/* Cards can lift */
 .project-card,
 .project-tile {
   transform: translateY(0);
@@ -489,17 +478,15 @@ footer {
   box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
-/* Buttons/links: no movement, just color/shadow */
 .btn,
-.project-card a,
-.project-tile a {
+.project-card a:not(.inline-link),
+.project-tile a:not(.inline-link) {
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* (Optional) Better keyboard focus without movement */
 .btn:focus-visible,
-.project-card a:focus-visible,
-.project-tile a:focus-visible {
+.project-card a:not(.inline-link):focus-visible,
+.project-tile a:not(.inline-link):focus-visible {
   outline: 2px solid #2d2d2d;
   outline-offset: 2px;
 }
@@ -509,7 +496,6 @@ footer {
 /* 11) Responsive                                                             */
 /* ========================================================================== */
 
-/* Global responsive */
 @media (max-width: 768px) {
     .project-links {
         grid-template-columns: 1fr;
@@ -530,7 +516,6 @@ footer {
     }
 }
 
-/* About avatar tweak */
 @media (max-width: 768px) {
   .hero .avatar { width: 112px; height: 112px; }
 }
@@ -547,8 +532,8 @@ footer {
 /* ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .project-card a,
-  .project-tile a,
+  .project-card a:not(.inline-link),
+  .project-tile a:not(.inline-link),
   .btn {
     transition: none;
   }
