@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthright | Teo Mendoza</title>
+    <link rel="stylesheet" href="../style.css?v=0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1><a href="../index.html">Teo Mendoza</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="projects">
+
+        <div class="project-card">
+            <h3>Overview</h3>
+            <p>
+                Birthright is a competitive 1v1 strategy card game where players manage a growing gold economy and deploy units to bring an opponent's health from 25 to 0. Turns move through drawing, resource management, and attack/defense phases, with combat resolved through careful unit placement rather than chance. Built with Godot and C#, with a custom Rust server module running on SpacetimeDB for real-time multiplayer networking.
+            </p>
+            <a href="https://teomendoza.itch.io/birthright">Play on Itch</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Gameplay Trailer</h3>
+
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/XYz0CmmEKgk" title="Birthright Gameplay Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Now Live on Itch</h3>
+            <p>
+                Birthright is released and playable now on itch.io, with a small but growing playerbase, 30 downloads and players so far, and climbing. The source is currently private while development continues toward a full release, with design docs to follow.
+            </p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Teo Mendoza</p>
+    </footer>
+
+</body>
+</html>
+
+<style>
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  margin-top: 1.25rem;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+</style>
