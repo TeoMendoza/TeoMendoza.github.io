@@ -24,13 +24,24 @@
         <!-- Intro -->
         <div class="project-card">
             <h3>Pedalogical</h3>
-            <p><em>AI-powered learning platform for students and instructors</em></p>
+            <p><em>Full-stack learning platform for students and instructors</em></p>
             <p>
-                Pedalogical is an NSF-funded educational platform that uses LLMs to give students personalized
-                feedback within instructor-defined limits. It ran in a Spring 2026 university study with 150 students
+                Pedalogical is an NSF-funded educational platform that gives students personalized, AI-assisted feedback
+                within limits set by their instructor. It ran in a Spring 2026 university study with 150 students
                 and has since been taken down, as it was built for the study.
             </p>
-            <p><strong>Tech:</strong> ASP.NET · EF Core · PostgreSQL · LLM APIs · CI/CD</p>
+            <p><strong>Tech:</strong> ASP.NET · EF Core · PostgreSQL · CI/CD · LLM APIs</p>
+        </div>
+
+        <div class="project-card">
+            <h3>My Role: Project Manager &amp; Lead Developer</h3>
+            <ul>
+                <li>Led a three-person student team on an NSF-funded initiative, running Agile sprints and milestones and acting as liaison to the faculty project lead</li>
+                <li>Oversaw backend and database design, including redesigns for classroom-scale deployment</li>
+                <li>Wrote 80% of the code for the Spring 2026 version, including the ASP.NET backend and the PostgreSQL data layer (EF Core)</li>
+                <li>Championed and oversaw a CI/CD pipeline with unit tests that gates production releases on a passing build</li>
+                <li>Designed the feedback system around rolling student profiles instead of full student histories, keeping feedback consistent over long interactions and cutting LLM tokens per call by an estimated 25%</li>
+            </ul>
         </div>
 
         <div class="project-card">
@@ -44,17 +55,6 @@
                 research assistant.
             </p>
             <a href="https://dl.acm.org/doi/10.1145/3769694.3771107">Read the Paper</a>
-        </div>
-
-        <div class="project-card">
-            <h3>My Role: Project Manager &amp; Backend Developer</h3>
-            <ul>
-                <li>Led a three-person student team on an NSF-funded initiative, running Agile sprints and milestones and acting as liaison to the faculty project lead</li>
-                <li>Wrote 80% of the code for the Spring 2026 version (ASP.NET, EF Core, PostgreSQL)</li>
-                <li>Designed an LLM feedback pipeline that builds rolling student profiles (behavior, strengths, weaknesses) during interactions and periodically re-evaluates and prunes them. This replaced full student-history prompts, keeping feedback consistent over long interactions instead of degrading, and cut tokens per call by an estimated 25%</li>
-                <li>Championed and oversaw a CI/CD pipeline with unit tests that gates production releases on a passing build</li>
-                <li>Oversaw system redesigns for classroom-scale deployment</li>
-            </ul>
         </div>
 
     </section>

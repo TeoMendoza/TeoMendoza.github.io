@@ -258,11 +258,6 @@ nav a.active {
   padding-inline: 1.5rem;
 }
 
-.projects-grid-heading {
-  text-align: center;
-  margin: 2.5rem 0 1.5rem;
-}
-
 .projects-grid-inner {
   display: grid;
   gap: var(--tile-gap);
