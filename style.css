@@ -246,7 +246,7 @@ nav a.active {
 /* ========================================================================== */
 
 :root {
-  --tile-w: 460px;
+  --tile-w: min(460px, calc(100vw - 3rem));
   --tile-h: 265px;
   --tile-gap: 2rem;
 }
@@ -256,6 +256,11 @@ nav a.active {
   display: grid;
   place-items: center;
   padding-inline: 1.5rem;
+}
+
+.projects-grid-heading {
+  text-align: center;
+  margin: 2.5rem 0 1.5rem;
 }
 
 .projects-grid-inner {

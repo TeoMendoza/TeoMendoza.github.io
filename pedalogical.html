@@ -24,38 +24,37 @@
         <!-- Intro -->
         <div class="project-card">
             <h3>Pedalogical</h3>
+            <p><em>AI-powered learning platform for students and instructors</em></p>
             <p>
-                Pedalogical is an educational platform, built collaboratively, that leverages AI to 
-                support both students and instructors. It provides guided learning 
-                experiences, personalized feedback, and tools for instructors to 
-                analyze student progress and adapt their teaching. 
+                Pedalogical is an NSF-funded educational platform that uses LLMs to give students personalized
+                feedback within instructor-defined limits. It ran in a Spring 2026 university study with 150 students
+                and has since been taken down, as it was built for the study.
             </p>
-            <a href="https://pedalogical.com">Visit Website - Available Spring 2026</a>
+            <p><strong>Tech:</strong> ASP.NET · EF Core · PostgreSQL · LLM APIs · CI/CD</p>
         </div>
 
         <div class="project-card">
-            <h3>My Role in Pedalogical</h3>
+            <h3>Paper</h3>
             <p>
-                I served as project manager during summer development, leading a three person 
-                student team on this NSF-funded research initiative. We followed an Agile 
-                development process with sprint planning and regular meetings to guide 
-                iteration. My focus was on aligning technical work with educational goals and 
-                fostering collaboration among developers, researchers, and faculty. My key 
-                contributions included:
+                Mendoza, T., et al. (2025). <em>Not All Chatbots Teach: Evidence for Pedagogical Design in AI-Assisted
+                Technical Education.</em> ACM SIGCITE 2025.
             </p>
+            <p>
+                The paper reports on the Spring 2025 study, which ran on an earlier prototype backend I built as a
+                research assistant.
+            </p>
+            <a href="https://dl.acm.org/doi/10.1145/3769694.3771107">Read the Paper</a>
+        </div>
 
+        <div class="project-card">
+            <h3>My Role: Project Manager &amp; Backend Developer</h3>
             <ul>
-                <li>Directing production, setting milestones, and guiding team workflows</li>
-                <li>Acting as liaison between the development team and the faculty project lead</li>
-                <li>Overseeing system redesigns to ensure scalability for classroom deployment</li>
-                <li>Encouraging cross disciplinary communication and collaboration</li>
-                <li>Preparing the platform for Spring 2026 launch, supporting ~150 students</li>
+                <li>Led a three-person student team on an NSF-funded initiative, running Agile sprints and milestones and acting as liaison to the faculty project lead</li>
+                <li>Wrote 80% of the code for the Spring 2026 version (ASP.NET, EF Core, PostgreSQL)</li>
+                <li>Designed an LLM feedback pipeline that builds rolling student profiles (behavior, strengths, weaknesses) during interactions and periodically re-evaluates and prunes them. This replaced full student-history prompts, keeping feedback consistent over long interactions instead of degrading, and cut tokens per call by an estimated 25%</li>
+                <li>Championed and oversaw a CI/CD pipeline with unit tests that gates production releases on a passing build</li>
+                <li>Oversaw system redesigns for classroom-scale deployment</li>
             </ul>
-            
-            <p>
-                This role gave me valuable experience in leadership, project organization, and 
-                translating big picture vision into actionable progress across a complex team project.
-            </p>
         </div>
 
     </section>
