@@ -25,7 +25,13 @@
         <div class="project-card">
             <h3>Overview</h3>
             <p>
-                Bash is a fast-paced free-for-all arena brawler centered on pure combat, quick respawns, and constant player interaction. Full source and documentation available on <a href="https://github.com/TeoMendoza/Bash" class="inline-link"><strong>GitHub</strong></a>.
+                Bash is a fast-paced free-for-all arena brawler where 8-10 players compete in matches built around aim, movement, and ability mastery. There are no objective modes: the game is pure player versus player combat, with quick respawns and constant interaction.
+            </p>
+            <p>
+                Matches use a scoring system that rewards overall performance, with points for damage dealt, eliminations, streaks, and sustained pressure, so aggressive players, careful duelists, and opportunistic finishers can all succeed.
+            </p>
+            <p>
+                The first playable version is released on itch.io with The Magician as its first character, and more characters are planned.
             </p>
             <a href="https://teomendoza.itch.io/bash">Play on Itch</a>
         </div>
@@ -93,10 +99,10 @@
         <div class="project-card">
             <h3>Technical Overview</h3>
             <p>
-                Developed solo. The client is built in Unity (C#), and a custom Rust server module running on SpacetimeDB handles real-time multiplayer.
+                I developed Bash solo. The client is built in Unity (C#), and a custom Rust server module running on SpacetimeDB handles real-time multiplayer.
             </p>
             <ul>
-                <li><strong>Physics:</strong> a custom physics engine supporting arbitrary convex shapes (GJK collision detection, EPA penetration resolution), developed with AI assistance</li>
+                <li><strong>Physics:</strong> a custom physics engine supporting arbitrary convex shapes (GJK collision detection, EPA penetration resolution) and raycasting, developed with AI assistance</li>
                 <li><strong>Networking:</strong> client synchronization over SpacetimeDB</li>
             </ul>
         </div>
