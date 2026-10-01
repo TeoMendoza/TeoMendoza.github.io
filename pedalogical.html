@@ -21,26 +21,34 @@
     </header>
 
     <section class="projects">
-        <!-- Intro -->
         <div class="project-card">
-            <h3>Pedalogical</h3>
-            <p><em>Full-stack learning platform for students and instructors</em></p>
+            <h3>Overview</h3>
             <p>
-                Pedalogical is an NSF-funded educational platform that gives students personalized, AI-assisted feedback
-                within limits set by their instructor. It ran in a Spring 2026 university study with 150 students
-                and has since been taken down, as it was built for the study.
+                Pedalogical is an NSF-funded, full-stack educational platform that gives students personalized feedback within limits
+                set by their instructor. It ran in a Spring 2026 university study with 150 students and has since been
+                taken down, as it was built for the study.
             </p>
-            <p><strong>Tech:</strong> ASP.NET · EF Core · PostgreSQL · CI/CD · LLM APIs</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Technical Overview</h3>
+            <p>
+                A full-stack web application with an ASP.NET backend and EF Core over a PostgreSQL database.
+            </p>
+            <ul>
+                <li><strong>Backend:</strong> ASP.NET and EF Core over PostgreSQL, redesigned for classroom-scale deployment</li>
+                <li><strong>CI/CD:</strong> a pipeline with unit tests that gates every production release on a passing build</li>
+                <li><strong>Feedback pipeline:</strong> rolling student profiles replace full student histories in prompts, keeping feedback consistent over long interactions and cutting LLM tokens per call by an estimated 25%</li>
+            </ul>
         </div>
 
         <div class="project-card">
             <h3>My Role: Project Manager &amp; Lead Developer</h3>
             <ul>
                 <li>Led a three-person student team on an NSF-funded initiative, running Agile sprints and milestones and acting as liaison to the faculty project lead</li>
-                <li>Oversaw backend and database design, including redesigns for classroom-scale deployment</li>
-                <li>Wrote 80% of the code for the Spring 2026 version, including the ASP.NET backend and the PostgreSQL data layer (EF Core)</li>
-                <li>Championed and oversaw a CI/CD pipeline with unit tests that gates production releases on a passing build</li>
-                <li>Designed the feedback system around rolling student profiles instead of full student histories, keeping feedback consistent over long interactions and cutting LLM tokens per call by an estimated 25%</li>
+                <li>Oversaw system design across the stack, including the redesigns for classroom-scale deployment</li>
+                <li>Wrote 80% of the code for the Spring 2026 version, across the backend, database and client</li>
+                <li>Championed the CI/CD pipeline and designed the profile-based feedback pipeline</li>
             </ul>
         </div>
 
